@@ -38,7 +38,8 @@ def add_initial_book_data(Book, db, books_data):
             price=book['price'],
             description=book['description'],
             inventory_count=book['inventory_count'],
-            isbn=book['isbn']
+            isbn=book['isbn'],
+            author_id=book['author_id']
         )
         db.session.add(new_book)
         db.session.commit()
