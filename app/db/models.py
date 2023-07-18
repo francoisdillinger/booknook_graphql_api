@@ -7,7 +7,7 @@ Base = declarative_base()
 class User(Base):
     __tablename__ = 'users'
 
-    id = Column(Integer, primary_key=True)
+    id = Column(Integer, primary_key=True, autoincrement=True)
     user_name = Column(String)
     password = Column(String)
     email = Column(String)
@@ -18,7 +18,7 @@ class User(Base):
 class Author(Base):
     __tablename__ = 'authors'
 
-    id = Column(Integer, primary_key=True)
+    id = Column(Integer, primary_key=True, autoincrement=True)
     author_first_name = Column(String)
     author_last_name = Column(String)
     books = relationship('Book', back_populates='author')
@@ -26,7 +26,7 @@ class Author(Base):
 class Book(Base):
     __tablename__ = 'books'
     
-    id = Column(Integer, primary_key=True)
+    id = Column(Integer, primary_key=True, autoincrement=True)
     book_title = Column(String)
     page_count = Column(Integer)
     publish_date = Column(String)
