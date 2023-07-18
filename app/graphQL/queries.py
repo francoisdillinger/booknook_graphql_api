@@ -1,6 +1,8 @@
 from graphene import ObjectType, List
 from app.graphQL.types import UserObject, AuthorObject, BookObject
-from app.db.database import users_data, authors_data, books_data
+from app.db.database import db
+from app.db.models import User, Author, Book
+
 
 class Query(ObjectType):
     users = List(UserObject)
@@ -9,12 +11,10 @@ class Query(ObjectType):
 
     # Root-Level Resolvers
     def resolve_users(root, info):
-        # print("Here I am!")
-        # print(f'Data: {users_data}')
-        return users_data
+        return db.session.query(User).all()
     
     def resolve_authors(root, info):
-        return authors_data
+        return db.session.query(Author).all()
     
     def resolve_books(root, info):
-        return books_data
+        return db.session.query(Book).all()
