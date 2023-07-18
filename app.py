@@ -2,9 +2,10 @@ from app.main import create_app
 from flask_graphql import GraphQLView
 from graphene import  Schema
 from app.graphQL.queries import Query
+from app.graphQL.mutations import Mutation
 
 app = create_app()
-schema = Schema(query=Query)
+schema = Schema(query=Query, mutation=Mutation)
 
 app.add_url_rule(
     "/graphql",
