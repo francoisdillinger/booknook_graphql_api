@@ -1,5 +1,6 @@
 from graphene import ObjectType, String, Int, List, Field
-from app.db.database import users_data, authors_data, books_data
+# from app.db.database import db
+# from app.db.models import User, Author, Book
 
 
 class UserObject(ObjectType):
@@ -10,6 +11,7 @@ class UserObject(ObjectType):
     last_name = String()
     role = String()
 
+
 class AuthorObject(ObjectType):
     author_first_name = String()
     author_last_name = String()
@@ -17,7 +19,13 @@ class AuthorObject(ObjectType):
 
     # Field-level Resolver
     def resolve_books(root, info):
-        return [book for book in books_data if book["author_id"] == root['id']]
+        # This is how you would do it without the back_populates relationship
+        # books = db.session.query(Book).filter(Book.author_id == root.id).all()
+        # db.session.close()
+        # return books
+
+        # This is how you would do it with the back_populates relationship specified in the Book model
+        return root.books
 
 
 class BookObject(ObjectType):
@@ -32,4 +40,10 @@ class BookObject(ObjectType):
 
     # Field-level Resolver
     def resolve_author(root, info):
-        return [author for author in authors_data if author["id"] == root["author_id"]][0]
+        # This is how you would do it without the back_populates relationship
+        # author = db.session.query(Author).filter(Author.id == root.author_id).first()
+        # db.session.close()
+        # return author
+
+        # This is how you would do it with the back_populates relationship specified in the Author model
+        return root.author
