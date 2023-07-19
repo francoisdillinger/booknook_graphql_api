@@ -35,4 +35,28 @@ class Book(Base):
     inventory_count = Column(Integer)
     isbn = Column(String)
     author_id = Column(Integer, ForeignKey('authors.id'))
+    
+    # Relations
     author = relationship('Author', back_populates='books')
+    book_categories = relationship('BookCategories', back_populates='book')
+
+class Categories(Base):
+    __tablename__ = 'categories'
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    category_name = Column(String)
+    
+    # Relations
+    book_categories = relationship('BookCategories', back_populates='category')
+    books = relationship('Book', secondary='book_categories')
+
+class BookCategories(Base):
+    __tablename__ = 'book_categories'
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    book_id = Column(Integer, ForeignKey('books.id'))
+    category_id = Column(Integer, ForeignKey('categories.id'))
+    
+    # Relations
+    book = relationship('Book', back_populates='book_categories')
+    category = relationship('Categories', back_populates='book_categories')
