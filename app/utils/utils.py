@@ -1,9 +1,11 @@
-
+# This function prepares the database by dropping all existing tables and creating new ones
+# according to the schema defined in the models.
 def prepare_database(base, database):
     base.metadata.drop_all(database.engine)
     base.metadata.create_all(database.engine)
 
-
+# This function adds initial user data to the database. It loops over a list of dictionaries containing user data,
+# creates User instances from that data, and adds them to the session. After each user is added, the session is committed.
 def add_initial_user_data(User, db, users_data):
     print('Creating initial user data.')
     for user in users_data:
@@ -18,6 +20,7 @@ def add_initial_user_data(User, db, users_data):
         db.session.add(new_user)
         db.session.commit()
 
+# This function does the same as the previous one, but for authors. It adds initial author data to the database.
 def add_initial_author_data(Author, db, authors_data):
     print('Creating initial author data.')
     for author in authors_data:
@@ -28,6 +31,7 @@ def add_initial_author_data(Author, db, authors_data):
         db.session.add(new_author)
         db.session.commit()
 
+# This function does the same for books. It adds initial book data to the database.
 def add_initial_book_data(Book, db, books_data):
     print('Creating initial book data.')
     for book in books_data:
@@ -44,6 +48,7 @@ def add_initial_book_data(Book, db, books_data):
         db.session.add(new_book)
         db.session.commit()
 
+# This function adds initial category data to the database.
 def add_initial_category_data(Category, db, categories_data):
     print('Creating initial category data.')
     for category in categories_data:
@@ -53,6 +58,7 @@ def add_initial_category_data(Category, db, categories_data):
         db.session.add(new_category)
         db.session.commit()
 
+# This function adds initial book-category relation data to the database.
 def add_initial_book_categories_data(BookCategories, db, book_categories_data):
     print('Creating initial book categories data.')
     for book_category in book_categories_data:
