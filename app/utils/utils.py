@@ -43,3 +43,22 @@ def add_initial_book_data(Book, db, books_data):
         )
         db.session.add(new_book)
         db.session.commit()
+
+def add_initial_category_data(Category, db, categories_data):
+    print('Creating initial category data.')
+    for category in categories_data:
+        new_category = Category(
+            category_name=category['category']
+        )
+        db.session.add(new_category)
+        db.session.commit()
+
+def add_initial_book_categories_data(BookCategories, db, book_categories_data):
+    print('Creating initial book categories data.')
+    for book_category in book_categories_data:
+        new_book_category = BookCategories(
+            book_id=book_category['book_id'],
+            category_id=book_category['category_id']
+        )
+        db.session.add(new_book_category)
+        db.session.commit()
