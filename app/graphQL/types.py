@@ -37,6 +37,7 @@ class BookObject(ObjectType):
     inventory_count = Int()
     isbn = String()
     author = Field(lambda: AuthorObject)
+    book_categories = List(lambda: BookCategoriesObject)
 
     # Field-level Resolver
     def resolve_author(root, info):
@@ -47,3 +48,29 @@ class BookObject(ObjectType):
 
         # This is how you would do it with the back_populates relationship specified in the Author model
         return root.author
+    
+        # Field-level Resolver
+    def resolve_book_categories(root, info):
+        return root.book_categories
+    
+class CategoryObject(ObjectType):
+    category_name = String()
+    books = List(lambda: BookObject)
+
+    # Field-level Resolver
+    def resolve_books(root, info):
+        return root.books
+
+class BookCategoriesObject(ObjectType):
+    book_id = Int()
+    category_id = Int()
+    book = Field(lambda: BookObject)
+    category = Field(lambda: CategoryObject)
+
+    # Field-level Resolver
+    def resolve_book(root, info):
+        return root.book
+
+    # Field-level Resolver
+    def resolve_category(root, info):
+        return root.category
