@@ -2,6 +2,7 @@ from graphene import Mutation, String, Int, Field, ObjectType
 from app.db.database import db
 from app.graphQL.types import UserObject, AuthorObject, BookObject
 from app.db.models import User, Author, Book
+from sqlalchemy.orm import joinedload
 
 
 class AddAuthor(Mutation):
@@ -19,7 +20,6 @@ class AddAuthor(Mutation):
         db.session.add(author)
         db.session.commit()
         db.session.refresh(author)
-        db.session.close()
         return AddAuthor(author=author)
 
 
@@ -32,6 +32,11 @@ class UpdateAuthor(Mutation):
     author = Field(lambda: AuthorObject)
 
     def mutate(root, info, author_id, author_first_name=None, author_last_name=None):
+        # This is how you would do it if the session is being closed prematurely. I removed explicit closing of 
+        # the session in mutations because it was causing issues and flask_sqlalchemy handles it for us.
+        # author = db.session.query(Author).options(joinedload(Author.books)).filter(Author.id == author_id).first()
+
+        
         author = db.session.query(Author).filter(Author.id == author_id).first()
 
         if not author:
@@ -43,7 +48,6 @@ class UpdateAuthor(Mutation):
 
         db.session.commit()
         db.session.refresh(author)
-        db.session.close()
         return UpdateAuthor(author=author)
 
 class Mutation(ObjectType):
