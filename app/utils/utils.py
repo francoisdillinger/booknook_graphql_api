@@ -81,3 +81,28 @@ def add_initial_book_categories_data(BookCategories, db, book_categories_data):
         )
         db.session.add(new_book_category)
         db.session.commit()
+
+# This function adds initial cart data to the database.
+def add_initial_cart_data(Cart, db, carts_data):
+    print('Creating initial cart data.')
+    for cart in carts_data:
+        new_cart = Cart(
+            user_id=cart['user_id'],
+            book_id=cart['book_id'],
+            quantity=cart['quantity']
+        )
+        db.session.add(new_cart)
+        db.session.commit()
+
+def add_initial_order_data(Order, db, orders_data):
+    print('Creating initial order data.')
+    for order in orders_data:
+        new_order = Order(
+            order_id=order['order_id'],
+            user_id=order['user_id'],
+            book_id=order['book_id'],
+            quantity=order['quantity'],
+            order_date=order['order_date']
+        )
+        db.session.add(new_order)
+        db.session.commit()
