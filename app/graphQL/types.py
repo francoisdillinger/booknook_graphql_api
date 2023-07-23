@@ -10,6 +10,11 @@ class UserObject(ObjectType):
     first_name = String()
     last_name = String()
     role = String()
+    reviews = List(lambda: ReviewObject)
+
+    # Field-level Resolver
+    def resolve_reviews(root, info):
+        return root.reviews
 
 
 class AuthorObject(ObjectType):
@@ -37,6 +42,7 @@ class BookObject(ObjectType):
     inventory_count = Int()
     isbn = String()
     author = Field(lambda: AuthorObject)
+    book_reviews = List(lambda: ReviewObject)
     book_categories = List(lambda: BookCategoriesObject)
 
     # Field-level Resolver
@@ -49,10 +55,28 @@ class BookObject(ObjectType):
         # This is how you would do it with the back_populates relationship specified in the Author model
         return root.author
     
+    def resolve_book_reviews(root, info):
+        return root.book_reviews
+
         # Field-level Resolver
     def resolve_book_categories(root, info):
         return root.book_categories
     
+class ReviewObject(ObjectType):
+    user = Field(lambda: UserObject)
+    rating = Int()
+    review = String()
+    book = Field(lambda: BookObject)
+
+    # Field-level Resolver
+    def resolve_user(root, info):
+        return root.user
+
+    # Field-level Resolver
+    def resolve_book(root, info):
+        return root.book
+
+
 class CategoryObject(ObjectType):
     category_name = String()
     books = List(lambda: BookObject)
