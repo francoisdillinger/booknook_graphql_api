@@ -14,7 +14,11 @@ class User(Base):
     first_name = Column(String)
     last_name = Column(String)
     role = Column(String)
+
+    # Relations
     reviews = relationship('Review', back_populates='user')
+    cart = relationship('Cart', back_populates='user')
+    orders = relationship('Order', back_populates='user')
 
 class Author(Base):
     __tablename__ = 'authors'
@@ -22,6 +26,8 @@ class Author(Base):
     id = Column(Integer, primary_key=True, autoincrement=True)
     author_first_name = Column(String)
     author_last_name = Column(String)
+
+    # Relations
     books = relationship('Book', back_populates='author')
 
 class Book(Base):
@@ -41,6 +47,8 @@ class Book(Base):
     author = relationship('Author', back_populates='books')
     book_reviews = relationship('Review', back_populates='book')
     book_categories = relationship('BookCategories', back_populates='book')
+    cart_book = relationship('Cart', back_populates='book')
+    book_orders = relationship('Order', back_populates='book')
 
 class Review(Base):
     __tablename__ = 'reviews'
@@ -76,14 +84,28 @@ class BookCategories(Base):
     book = relationship('Book', back_populates='book_categories')
     category = relationship('Categories', back_populates='book_categories')
 
-# class Cart(Base):
-#     __tablename__ = 'cart'
+class Cart(Base):
+    __tablename__ = 'cart'
 
-#     id = Column(Integer, primary_key=True, autoincrement=True)
-#     user_id = Column(Integer, ForeignKey('users.id'))
-#     book_id = Column(Integer, ForeignKey('books.id'))
-#     quantity = Column(Integer)
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    user_id = Column(Integer, ForeignKey('users.id'))
+    book_id = Column(Integer, ForeignKey('books.id'))
+    quantity = Column(Integer)
     
-#     # Relations
-#     user = relationship('User', back_populates='cart')
-#     book = relationship('Book', back_populates='cart')
+    # Relations
+    user = relationship('User', back_populates='cart')
+    book = relationship('Book', back_populates='cart_book')
+
+class Order(Base):
+    __tablename__ = 'orders'
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    order_id = Column(String)
+    user_id = Column(Integer, ForeignKey('users.id'))
+    book_id = Column(Integer, ForeignKey('books.id'))
+    quantity = Column(Integer)
+    order_date = Column(String)
+    
+    # Relations
+    user = relationship('User', back_populates='orders')
+    book = relationship('Book', back_populates='book_orders')
