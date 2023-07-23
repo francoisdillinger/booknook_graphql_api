@@ -14,6 +14,7 @@ class User(Base):
     first_name = Column(String)
     last_name = Column(String)
     role = Column(String)
+    reviews = relationship('Review', back_populates='user')
 
 class Author(Base):
     __tablename__ = 'authors'
@@ -38,7 +39,21 @@ class Book(Base):
     
     # Relations
     author = relationship('Author', back_populates='books')
+    book_reviews = relationship('Review', back_populates='book')
     book_categories = relationship('BookCategories', back_populates='book')
+
+class Review(Base):
+    __tablename__ = 'reviews'
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    user_id = Column(Integer, ForeignKey('users.id'))
+    book_id = Column(Integer, ForeignKey('books.id'))
+    rating = Column(Integer)
+    review = Column(String)
+    
+    # Relations
+    user = relationship('User', back_populates='reviews')
+    book = relationship('Book', back_populates='book_reviews')
 
 class Categories(Base):
     __tablename__ = 'categories'
@@ -60,3 +75,15 @@ class BookCategories(Base):
     # Relations
     book = relationship('Book', back_populates='book_categories')
     category = relationship('Categories', back_populates='book_categories')
+
+# class Cart(Base):
+#     __tablename__ = 'cart'
+
+#     id = Column(Integer, primary_key=True, autoincrement=True)
+#     user_id = Column(Integer, ForeignKey('users.id'))
+#     book_id = Column(Integer, ForeignKey('books.id'))
+#     quantity = Column(Integer)
+    
+#     # Relations
+#     user = relationship('User', back_populates='cart')
+#     book = relationship('Book', back_populates='cart')
