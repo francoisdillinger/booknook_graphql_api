@@ -48,6 +48,19 @@ def add_initial_book_data(Book, db, books_data):
         db.session.add(new_book)
         db.session.commit()
 
+# This function adds initial review data to the database.
+def add_initial_review_data(Review, db, reviews_data):
+    print('Creating initial review data.')
+    for review in reviews_data:
+        new_review = Review(
+            user_id=review['user_id'],
+            book_id=review['book_id'],
+            rating=review['book_rating'],
+            review=review['book_review']
+        )
+        db.session.add(new_review)
+        db.session.commit()
+
 # This function adds initial category data to the database.
 def add_initial_category_data(Category, db, categories_data):
     print('Creating initial category data.')
