@@ -11,11 +11,20 @@ class UserObject(ObjectType):
     last_name = String()
     role = String()
     reviews = List(lambda: ReviewObject)
+    cart = List(lambda: CartObject)
+    orders = List(lambda: OrderObject)
 
     # Field-level Resolver
     def resolve_reviews(root, info):
         return root.reviews
 
+    # Field-level Resolver
+    def resolve_cart(root, info):
+        return root.cart
+
+    # Field-level Resolver
+    def resolve_orders(root, info):
+        return root.orders
 
 class AuthorObject(ObjectType):
     author_first_name = String()
@@ -44,6 +53,7 @@ class BookObject(ObjectType):
     author = Field(lambda: AuthorObject)
     book_reviews = List(lambda: ReviewObject)
     book_categories = List(lambda: BookCategoriesObject)
+    book_orders = List(lambda: OrderObject)
 
     # Field-level Resolver
     def resolve_author(root, info):
@@ -61,6 +71,9 @@ class BookObject(ObjectType):
         # Field-level Resolver
     def resolve_book_categories(root, info):
         return root.book_categories
+    
+    def resolve_book_orders(root, info):
+        return root.book_orders
     
 class ReviewObject(ObjectType):
     user = Field(lambda: UserObject)
@@ -98,3 +111,34 @@ class BookCategoriesObject(ObjectType):
     # Field-level Resolver
     def resolve_category(root, info):
         return root.category
+    
+class CartObject(ObjectType):
+    user_id = Int()
+    book_id = Int()
+    book = Field(lambda: BookObject)
+    user = Field(lambda: UserObject)
+
+    # Field-level Resolver
+    def resolve_book(root, info):
+        return root.book
+
+    # Field-level Resolver
+    def resolve_user(root, info):
+        return root.user
+    
+class OrderObject(ObjectType):
+    order_id = String()
+    user_id = Int()
+    book_id = Int()
+    quantity = Int()
+    order_date = String()
+    book = Field(lambda: BookObject)
+    user = Field(lambda: UserObject)
+
+    # Field-level Resolver
+    def resolve_book(root, info):
+        return root.book
+
+    # Field-level Resolver
+    def resolve_user(root, info):
+        return root.user
