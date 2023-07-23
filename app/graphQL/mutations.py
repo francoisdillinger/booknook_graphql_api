@@ -147,6 +147,23 @@ class UpdateBook(Mutation):
         return UpdateBook(book=book) 
 
 
+class DeleteBook(Mutation):
+    class Arguments:
+        book_id = Int(required=True)
+    
+    book = Field(lambda: BookObject)
+
+    def mutate(root, info, book_id):
+        book = db.session.query(Book).filter(Book.id == book_id).first()
+
+        if not book:
+            raise GraphQLError(f'Book with id {book_id} does not exist.')
+
+        db.session.delete(book)
+        db.session.commit()
+        return DeleteBook(book=book)
+
+
 class AddCategory(Mutation):
     class Arguments:
         category_name = String(required=True)
@@ -275,6 +292,7 @@ class Mutation(ObjectType):
     delete_author = DeleteAuthor.Field()
     add_book = AddBook.Field()
     update_book = UpdateBook.Field()
+    delete_book = DeleteBook.Field()
     add_category = AddCategory.Field()
     update_category = UpdateCategory.Field()
     add_book_category = AddBookCategory.Field()
