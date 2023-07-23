@@ -115,6 +115,7 @@ class BookCategoriesObject(ObjectType):
 class CartObject(ObjectType):
     user_id = Int()
     book_id = Int()
+    quantity = Int()
     book = Field(lambda: BookObject)
     user = Field(lambda: UserObject)
 
