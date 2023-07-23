@@ -7,6 +7,85 @@ from sqlalchemy.orm.exc import NoResultFound
 from graphql import GraphQLError
 
 
+class AddUser(Mutation):
+    class Arguments:
+        user_name = String(required=True)
+        password = String(required=True)
+        email = String(required=True)
+        first_name = String(required=True)
+        last_name = String(required=True)
+        role = String(required=True)
+    
+    user = Field(lambda: UserObject)
+
+    def mutate(root, info, user_name, password, email, first_name, last_name, role):
+        user = User(
+            user_name=user_name,
+            password=password,
+            email=email,
+            first_name=first_name,
+            last_name=last_name,
+            role=role
+        )
+        db.session.add(user)
+        db.session.commit()
+        db.session.refresh(user)
+        return AddUser(user=user)
+    
+
+class UpdateUser(Mutation):
+    class Arguments:
+        user_id = Int(required=True)
+        user_name = String()
+        password = String()
+        email = String()
+        first_name = String()
+        last_name = String()
+        role = String()
+    
+    user = Field(lambda: UserObject)
+
+    def mutate(root, info, user_id, user_name=None, password=None, email=None, first_name=None, last_name=None, role=None):
+        user = db.session.query(User).filter(User.id == user_id).first()
+
+        if not user:
+            raise GraphQLError(f'User with id {user_id} not found.')
+
+        if user_name:
+            user.user_name = user_name
+        if password:
+            user.password = password
+        if email:
+            user.email = email
+        if first_name:
+            user.first_name = first_name
+        if last_name:
+            user.last_name = last_name
+        if role:
+            user.role = role
+
+        db.session.commit()
+        db.session.refresh(user)
+        return UpdateUser(user=user)
+    
+
+class DeleteUser(Mutation):
+    class Arguments:
+        user_id = Int(required=True)
+    
+    user = Field(lambda: UserObject)
+
+    def mutate(root, info, user_id):
+        user = db.session.query(User).filter(User.id == user_id).first()
+
+        if not user:
+            raise GraphQLError(f'User with id {user_id} not found.')
+
+        db.session.delete(user)
+        db.session.commit()
+        return DeleteUser(user=user)
+
+
 class AddAuthor(Mutation):
     class Arguments:
         author_first_name = String(required=True)
@@ -258,6 +337,7 @@ class AddBookCategory(Mutation):
 #         db.session.refresh(book_category)
 #         return UpdateBookCategory(book_category=book_category)
 
+
 class DeleteBookCategories(Mutation):
     class Arguments:
         book_id = Int(required=True)
@@ -284,9 +364,10 @@ class DeleteBookCategories(Mutation):
         return DeleteBookCategories(book_category=book_category)
 
 
-
-
 class Mutation(ObjectType):
+    add_user = AddUser.Field()
+    update_user = UpdateUser.Field()
+    delete_user = DeleteUser.Field()
     add_author = AddAuthor.Field()
     update_author = UpdateAuthor.Field()
     delete_author = DeleteAuthor.Field()
