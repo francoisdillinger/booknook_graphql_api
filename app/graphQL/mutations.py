@@ -500,27 +500,29 @@ class AddReview(Mutation):
 
 class UpdateReview(Mutation):
     class Arguments:
-        review_id = Int(required=True)
+        # This is the id of the review, not the user or book id
+        # Had to change due to issues with testing: review_id vs id
+        id = Int(required=True)
         rating = Int()
-        review_text = String()
+        review = String()
     
     review = Field(lambda: ReviewObject)
 
-    def mutate(root, info, review_id, rating=None, review_text=None):
-        review = db.session.query(Review).filter(Review.id == review_id).first()
+    def mutate(root, info, id, rating=None, review=None):
+        review_instance = db.session.query(Review).filter(Review.id == id).first()
 
-        if not review:
-            raise GraphQLError(f'Review with id {review_id} does not exist.')
+        if not review_instance:
+            raise GraphQLError(f'Review with id {id} does not exist.')
         if rating is not None:
             if rating < 1 or rating > 5:
                 raise GraphQLError(f'Rating must be between 1 and 5.')
-            review.rating = rating
-        if review_text is not None:
-            review.review = review_text
+            review_instance.rating = rating
+        if review is not None:
+            review_instance.review = review
 
         db.session.commit()
-        db.session.refresh(review)
-        return UpdateReview(review=review)
+        db.session.refresh(review_instance)
+        return UpdateReview(review=review_instance) 
 
 
 class DeleteReview(Mutation):
