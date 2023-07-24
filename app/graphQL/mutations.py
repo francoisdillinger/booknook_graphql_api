@@ -440,6 +440,35 @@ class DeleteCart(Mutation):
         return DeleteCart(cart=cart)
 
 
+class AddOrder(Mutation):
+    class Arguments:
+        order_id = String(required=True)
+        user_id = Int(required=True)
+        book_id = Int(required=True)
+        quantity = Int(required=True)
+        order_date = String(required=True)
+        # Come back and make sure you add a book price as we need to calculate the total price of the order
+        # based on the current price of the book at the time or ordering since prices fluctuate in the real world.
+
+    order = Field(lambda: OrderObject)
+
+    def mutate(root, info, user_id, book_id, quantity, order_date, order_id):
+        order = Order(
+            order_id=order_id,
+            user_id=user_id,
+            book_id=book_id,
+            quantity=quantity,
+            order_date=order_date
+        )
+        db.session.add(order)
+        db.session.commit()
+        db.session.refresh(order)
+        return AddOrder(order=order)
+
+
+
+
+
 class Mutation(ObjectType):
     add_user = AddUser.Field()
     update_user = UpdateUser.Field()
@@ -462,3 +491,5 @@ class Mutation(ObjectType):
     add_cart = AddCart.Field()
     update_cart = UpdateCart.Field()
     delete_cart = DeleteCart.Field()
+
+    add_order = AddOrder.Field()
