@@ -466,7 +466,79 @@ class AddOrder(Mutation):
         return AddOrder(order=order)
 
 
+class AddReview(Mutation):
+    class Arguments:
+        user_id = Int(required=True)
+        book_id = Int(required=True)
+        rating = Int(required=True)
+        review = String(required=True)
+    
+    review = Field(lambda: ReviewObject)
 
+    def mutate(root, info, user_id, book_id, rating, review):
+        user = db.session.query(User).filter(User.id == user_id).first()
+        book = db.session.query(Book).filter(Book.id == book_id).first()
+
+        if not user:
+            raise GraphQLError(f'User with id {user_id} does not exist.')
+        if not book:
+            raise GraphQLError(f'Book with id {book_id} does not exist.')
+        if rating < 1 or rating > 5:
+            raise GraphQLError(f'Rating must be between 1 and 5.')
+        
+        review = Review(
+            user_id=user_id,
+            book_id=book_id,
+            rating=rating,
+            review=review
+        )
+        db.session.add(review)
+        db.session.commit()
+        db.session.refresh(review)
+        return AddReview(review=review)
+
+
+class UpdateReview(Mutation):
+    class Arguments:
+        review_id = Int(required=True)
+        rating = Int()
+        review_text = String()
+    
+    review = Field(lambda: ReviewObject)
+
+    def mutate(root, info, review_id, rating=None, review_text=None):
+        review = db.session.query(Review).filter(Review.id == review_id).first()
+
+        if not review:
+            raise GraphQLError(f'Review with id {review_id} does not exist.')
+        if rating is not None:
+            if rating < 1 or rating > 5:
+                raise GraphQLError(f'Rating must be between 1 and 5.')
+            review.rating = rating
+        if review_text is not None:
+            review.review = review_text
+
+        db.session.commit()
+        db.session.refresh(review)
+        return UpdateReview(review=review)
+
+
+class DeleteReview(Mutation):
+    class Arguments:
+        review_id = Int(required=True)
+    
+    review = Field(lambda: ReviewObject)
+
+    def mutate(root, info, review_id):
+        review = db.session.query(Review).filter(Review.id == review_id).first()
+
+        if not review:
+            raise GraphQLError(f'Review with id {review_id} does not exist.')
+        
+        db.session.delete(review)
+        db.session.commit()
+
+        return DeleteReview(review=review)
 
 
 class Mutation(ObjectType):
@@ -493,3 +565,7 @@ class Mutation(ObjectType):
     delete_cart = DeleteCart.Field()
 
     add_order = AddOrder.Field()
+
+    add_review = AddReview.Field()
+    update_review = UpdateReview.Field()
+    delete_review = DeleteReview.Field()
