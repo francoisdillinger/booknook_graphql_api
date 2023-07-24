@@ -1,10 +1,29 @@
 from graphene import Mutation, String, Int, Field, ObjectType
 from app.db.database import db
-from app.graphQL.types import UserObject, AuthorObject, BookObject, CategoryObject, BookCategoriesObject
-from app.db.models import User, Author, Book, Categories, BookCategories
 from sqlalchemy.orm import joinedload
 from sqlalchemy.orm.exc import NoResultFound
 from graphql import GraphQLError
+from app.graphQL.types import (
+    UserObject, 
+    AuthorObject, 
+    BookObject, 
+    CategoryObject, 
+    BookCategoriesObject, 
+    CartObject, 
+    OrderObject, 
+    ReviewObject
+    )
+from app.db.models import (
+    User, 
+    Author, 
+    Book, 
+    Categories, 
+    BookCategories, 
+    Cart, 
+    Order, 
+    Review
+    )
+
 
 
 class AddUser(Mutation):
@@ -364,18 +383,82 @@ class DeleteBookCategories(Mutation):
         return DeleteBookCategories(book_category=book_category)
 
 
+class AddCart(Mutation):
+    class Arguments:
+        user_id = Int(required=True)
+        book_id = Int(required=True)
+        quantity = Int(required=True)
+    
+    cart = Field(lambda: CartObject)
+
+    def mutate(root, info, user_id, book_id, quantity):
+        cart = Cart(
+            user_id=user_id,
+            book_id=book_id,
+            quantity=quantity
+        )
+        db.session.add(cart)
+        db.session.commit()
+        db.session.refresh(cart)
+        return AddCart(cart=cart)
+    
+
+class UpdateCart(Mutation):
+    class Arguments:
+        cart_id = Int(required=True)
+        quantity = Int(required=True)
+    
+    cart = Field(lambda: CartObject)
+
+    def mutate(root, info, cart_id, quantity):
+        cart = db.session.query(Cart).filter(Cart.id == cart_id).first()
+
+        if not cart:
+            raise GraphQLError(f'Cart item with id {cart_id} does not exist.')
+        
+        cart.quantity = quantity
+        db.session.commit()
+        db.session.refresh(cart)
+        return UpdateCart(cart=cart)
+
+
+class DeleteCart(Mutation):
+    class Arguments:
+        cart_id = Int(required=True)
+    
+    cart = Field(lambda: CartObject)
+
+    def mutate(root, info, cart_id):
+        cart = db.session.query(Cart).filter(Cart.id == cart_id).first()
+
+        if not cart:
+            raise GraphQLError(f'Cart item with id {cart_id} does not exist.')
+        
+        db.session.delete(cart)
+        db.session.commit()
+
+        return DeleteCart(cart=cart)
+
+
 class Mutation(ObjectType):
     add_user = AddUser.Field()
     update_user = UpdateUser.Field()
     delete_user = DeleteUser.Field()
+
     add_author = AddAuthor.Field()
     update_author = UpdateAuthor.Field()
     delete_author = DeleteAuthor.Field()
+
     add_book = AddBook.Field()
     update_book = UpdateBook.Field()
     delete_book = DeleteBook.Field()
+
     add_category = AddCategory.Field()
     update_category = UpdateCategory.Field()
     add_book_category = AddBookCategory.Field()
     # update_book_category = UpdateBookCategory.Field()
     delete_book_category = DeleteBookCategories.Field()
+
+    add_cart = AddCart.Field()
+    update_cart = UpdateCart.Field()
+    delete_cart = DeleteCart.Field()
