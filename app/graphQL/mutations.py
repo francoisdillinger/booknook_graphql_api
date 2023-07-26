@@ -23,7 +23,7 @@ from app.db.models import (
     Order, 
     Review
     )
-
+from app.graphQL.user.mutations import LoginUser
 
 
 class AddUser(Mutation):
@@ -571,3 +571,5 @@ class Mutation(ObjectType):
     add_review = AddReview.Field()
     update_review = UpdateReview.Field()
     delete_review = DeleteReview.Field()
+
+    login_user = LoginUser.Field()
