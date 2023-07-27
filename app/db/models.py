@@ -109,3 +109,15 @@ class Order(Base):
     # Relations
     user = relationship('User', back_populates='orders')
     book = relationship('Book', back_populates='book_orders')
+
+class WishList(Base):
+    __tablename__ = 'wish_list'
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    user_id = Column(Integer, ForeignKey('users.id'))
+    book_id = Column(Integer, ForeignKey('books.id'))
+    
+    # Relations
+    user = relationship('User', back_populates='wish_list')
+    book = relationship('Book', back_populates='wish_list_book')
+    # Remember to create relationships for user and book to wishlist
