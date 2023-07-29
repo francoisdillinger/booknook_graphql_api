@@ -19,6 +19,7 @@ class User(Base):
     reviews = relationship('Review', back_populates='user')
     cart = relationship('Cart', back_populates='user')
     orders = relationship('Order', back_populates='user')
+    wish_list = relationship('WishList', back_populates='user')
 
 class Author(Base):
     __tablename__ = 'authors'
@@ -49,6 +50,7 @@ class Book(Base):
     book_categories = relationship('BookCategories', back_populates='book')
     cart_book = relationship('Cart', back_populates='book')
     book_orders = relationship('Order', back_populates='book')
+    wish_list_book = relationship('WishList', back_populates='book')
 
 class Review(Base):
     __tablename__ = 'reviews'
