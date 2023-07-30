@@ -143,3 +143,17 @@ class OrderObject(ObjectType):
     # Field-level Resolver
     def resolve_user(root, info):
         return root.user
+    
+class WishListObject(ObjectType):
+    user_id = Int()
+    book_id = Int()
+    book = Field(lambda: BookObject)
+    user = Field(lambda: UserObject)
+
+    # Field-level Resolver
+    def resolve_book(root, info):
+        return root.book
+
+    # Field-level Resolver
+    def resolve_user(root, info):
+        return root.user
