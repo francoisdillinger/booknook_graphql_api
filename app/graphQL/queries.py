@@ -8,7 +8,8 @@ from app.graphQL.types import (
     CategoryObject, 
     BookCategoriesObject, 
     CartObject,
-    OrderObject
+    OrderObject,
+    WishListObject
     )
 from app.db.models import (
     User, 
@@ -18,7 +19,8 @@ from app.db.models import (
     Categories, 
     BookCategories, 
     Cart, 
-    Order
+    Order,
+    WishList
     )
 
 
@@ -31,6 +33,7 @@ class Query(ObjectType):
     book_categories = List(BookCategoriesObject)
     cart = List(CartObject)
     orders = List(OrderObject)
+    wish_list = List(WishListObject)
 
 
 
@@ -58,3 +61,7 @@ class Query(ObjectType):
     
     def resolve_orders(root, info): 
         return db.session.query(Order).all()
+    
+    def resolve_wish_list(root, info):
+        return db.session.query(WishList).all()
+    
