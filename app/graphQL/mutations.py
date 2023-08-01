@@ -11,7 +11,8 @@ from app.graphQL.types import (
     BookCategoriesObject, 
     CartObject, 
     OrderObject, 
-    ReviewObject
+    ReviewObject,
+    WishListObject
     )
 from app.db.models import (
     User, 
@@ -21,7 +22,8 @@ from app.db.models import (
     BookCategories, 
     Cart, 
     Order, 
-    Review
+    Review,
+    WishList
     )
 from app.graphQL.user.mutations import LoginUser
 
