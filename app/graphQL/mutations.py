@@ -545,6 +545,27 @@ class DeleteReview(Mutation):
         return DeleteReview(review=review)
 
 
+class AddWishlist(Mutation):
+    class Arguments:
+        user_id = Int(required=True)
+        book_id = Int(required=True)
+    
+    wishlist = Field(lambda: WishListObject)
+
+    def mutate(root, info, user_id, book_id):
+        wishlist = WishList(
+            user_id=user_id,
+            book_id=book_id
+        )
+        db.session.add(wishlist)
+        db.session.commit()
+        db.session.refresh(wishlist)
+        return AddWishlist(wishlist=wishlist)
+
+
+
+
+
 class Mutation(ObjectType):
     add_user = AddUser.Field()
     update_user = UpdateUser.Field()
