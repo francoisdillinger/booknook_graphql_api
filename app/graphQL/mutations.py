@@ -563,7 +563,22 @@ class AddWishlist(Mutation):
         return AddWishlist(wishlist=wishlist)
 
 
+class DeleteWishlist(Mutation):
+    class Arguments:
+        wishlist_id = Int(required=True)
+    
+    wishlist = Field(lambda: WishListObject)
 
+    def mutate(root, info, wishlist_id):
+        wishlist = db.session.query(WishList).filter(WishList.id == wishlist_id).first()
+
+        if not wishlist:
+            raise GraphQLError(f'Wishlist item with id {wishlist_id} does not exist.')
+        
+        db.session.delete(wishlist)
+        db.session.commit()
+
+        return DeleteWishlist(wishlist=wishlist)
 
 
 class Mutation(ObjectType):
