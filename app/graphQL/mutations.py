@@ -329,7 +329,7 @@ class AddBookCategory(Mutation):
         db.session.refresh(book_category)
         return AddBookCategory(book_category=book_category)
 
-# Not sure if this is needed, it seems to be cuasing an issue where it is changing the category ID
+# Not sure if this is needed, it seems to be causing an issue where it is changing the category ID
 # only for the book selected. In other words, it allows duplication of a book's categories, and
 # we don't want that behavior. Categories simply need to be added or deleted, not modified.
 
@@ -611,3 +611,6 @@ class Mutation(ObjectType):
     delete_review = DeleteReview.Field()
 
     login_user = LoginUser.Field()
+
+    add_wishlist = AddWishlist.Field()
+    delete_wishlist = DeleteWishlist.Field()
