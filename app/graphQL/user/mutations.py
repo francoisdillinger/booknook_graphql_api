@@ -15,7 +15,7 @@ class LoginUser(Mutation):
         user = db.session.query(User).filter_by(email=email).first()
 
         if not user or user.password != password:
-            raise GraphQLError('Invalid Email')
+            raise GraphQLError('Invalid Email or password.')
         
         token = ''.join(choices('abcdefghijklmnopqrstuvwxyz1234567890', k=10))
         
