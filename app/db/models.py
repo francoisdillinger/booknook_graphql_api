@@ -9,6 +9,9 @@ class User(Base):
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     user_name = Column(String)
+    # -----------------------------------------------------------------------------------------------------
+    # Might want to change this to hashed_password
+    # -----------------------------------------------------------------------------------------------------
     password = Column(String)
     email = Column(String)
     first_name = Column(String)
