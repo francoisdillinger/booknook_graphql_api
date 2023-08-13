@@ -1,3 +1,6 @@
+from argon2 import PasswordHasher
+ph = PasswordHasher()
+
 # This function prepares the database by dropping all existing tables and creating new ones
 # according to the schema defined in the models.
 def prepare_database(base, database):
@@ -11,7 +14,7 @@ def add_initial_user_data(User, db, users_data):
     for user in users_data:
         new_user = User(
             user_name=user['user_name'],
-            password=user['password'],
+            password=ph.hash(user['password']),
             email=user['email'],
             first_name=user['first_name'],
             last_name=user['last_name'],
