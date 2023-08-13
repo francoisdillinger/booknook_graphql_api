@@ -3,6 +3,10 @@ from graphql import GraphQLError
 from app.db.models import User
 from app.db.database import db
 from random import choices
+from argon2 import PasswordHasher
+from argon2.exceptions import VerifyMismatchError
+
+ph = PasswordHasher()
 
 class LoginUser(Mutation):
     class Arguments:
@@ -14,7 +18,12 @@ class LoginUser(Mutation):
     def mutate(root, info, email, password):
         user = db.session.query(User).filter_by(email=email).first()
 
-        if not user or user.password != password:
+        if not user:
+            raise GraphQLError('Invalid Email or password.')
+        
+        try:
+            ph.verify(user.password, password)
+        except VerifyMismatchError:
             raise GraphQLError('Invalid Email or password.')
         
         token = ''.join(choices('abcdefghijklmnopqrstuvwxyz1234567890', k=10))
