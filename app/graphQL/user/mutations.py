@@ -8,6 +8,28 @@ from argon2.exceptions import VerifyMismatchError
 
 ph = PasswordHasher()
 
+import os
+from dotenv import load_dotenv
+import jwt
+from datetime import datetime, timedelta
+
+load_dotenv()
+
+SECRET_KEY = os.getenv('SECRET_KEY')
+ALGORITHM = os.getenv('ALGORITHM')
+TOKEN_EXPIRATION_TIME_IN_MINUTES = int(os.getenv('TOKEN_EXPIRATION_TIME_IN_MINUTES'))
+
+
+def generate_token(email):
+    expiration_time = datetime.utcnow() + timedelta(minutes=TOKEN_EXPIRATION_TIME_IN_MINUTES)
+    payload = {
+        "email": email,
+        "exp": expiration_time
+        }
+    
+    token = jwt.encode(payload, SECRET_KEY, algorithm=ALGORITHM)
+    return token
+
 class LoginUser(Mutation):
     class Arguments:
         email = String(required=True)
@@ -26,6 +48,7 @@ class LoginUser(Mutation):
         except VerifyMismatchError:
             raise GraphQLError('Invalid Email or password.')
         
-        token = ''.join(choices('abcdefghijklmnopqrstuvwxyz1234567890', k=10))
+        # token = ''.join(choices('abcdefghijklmnopqrstuvwxyz1234567890', k=10))
+        token = generate_token(email)
         
         return LoginUser(token=token)
