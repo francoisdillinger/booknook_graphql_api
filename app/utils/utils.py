@@ -1,5 +1,17 @@
+import os
+import jwt
 from argon2 import PasswordHasher
-ph = PasswordHasher()
+from graphql import GraphQLError
+from dotenv import load_dotenv
+from datetime import datetime, timedelta
+from argon2 import PasswordHasher
+from argon2.exceptions import VerifyMismatchError
+
+load_dotenv()
+
+SECRET_KEY = os.getenv('SECRET_KEY')
+ALGORITHM = os.getenv('ALGORITHM')
+TOKEN_EXPIRATION_TIME_IN_MINUTES = int(os.getenv('TOKEN_EXPIRATION_TIME_IN_MINUTES'))
 
 # This function prepares the database by dropping all existing tables and creating new ones
 # according to the schema defined in the models.
@@ -11,6 +23,7 @@ def prepare_database(base, database):
 # creates User instances from that data, and adds them to the session. After each user is added, the session is committed.
 def add_initial_user_data(User, db, users_data):
     print('Creating initial user data.')
+    ph = PasswordHasher()
     for user in users_data:
         new_user = User(
             user_name=user['user_name'],
@@ -111,18 +124,6 @@ def add_initial_order_data(Order, db, orders_data):
         db.session.commit()
 
 
-import os
-from dotenv import load_dotenv
-import jwt
-from datetime import datetime, timedelta
-
-load_dotenv()
-
-SECRET_KEY = os.getenv('SECRET_KEY')
-ALGORITHM = os.getenv('ALGORITHM')
-TOKEN_EXPIRATION_TIME_IN_MINUTES = int(os.getenv('TOKEN_EXPIRATION_TIME_IN_MINUTES'))
-
-
 def generate_token(email):
     expiration_time = datetime.utcnow() + timedelta(minutes=TOKEN_EXPIRATION_TIME_IN_MINUTES)
     payload = {
@@ -133,7 +134,16 @@ def generate_token(email):
     token = jwt.encode(payload, SECRET_KEY, algorithm=ALGORITHM)
     return token
 
-from argon2 import PasswordHasher
-from argon2.exceptions import VerifyMismatchError
 
-ph = PasswordHasher()
+def hash_password(password):
+    ph = PasswordHasher()
+    return ph.hash(password)
+
+
+def verify_password(hashed_password, password):
+    ph = PasswordHasher()
+
+    try:
+        ph.verify(hashed_password, password)
+    except VerifyMismatchError:
+        return GraphQLError('Invalid Email or password.')
