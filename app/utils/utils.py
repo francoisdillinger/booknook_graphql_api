@@ -135,9 +135,9 @@ def generate_token(email):
     return token
 
 
-def hash_password(password):
-    ph = PasswordHasher()
-    return ph.hash(password)
+# def hash_password(password):
+#     ph = PasswordHasher()
+#     return ph.hash(password)
 
 
 def verify_password(hashed_password, password):
