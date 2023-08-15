@@ -2,33 +2,7 @@ from graphene import Mutation, String, Int, List, Field
 from graphql import GraphQLError
 from app.db.models import User
 from app.db.database import db
-from random import choices
-from argon2 import PasswordHasher
-from argon2.exceptions import VerifyMismatchError
-
-ph = PasswordHasher()
-
-import os
-from dotenv import load_dotenv
-import jwt
-from datetime import datetime, timedelta
-
-load_dotenv()
-
-SECRET_KEY = os.getenv('SECRET_KEY')
-ALGORITHM = os.getenv('ALGORITHM')
-TOKEN_EXPIRATION_TIME_IN_MINUTES = int(os.getenv('TOKEN_EXPIRATION_TIME_IN_MINUTES'))
-
-
-def generate_token(email):
-    expiration_time = datetime.utcnow() + timedelta(minutes=TOKEN_EXPIRATION_TIME_IN_MINUTES)
-    payload = {
-        "email": email,
-        "exp": expiration_time
-        }
-    
-    token = jwt.encode(payload, SECRET_KEY, algorithm=ALGORITHM)
-    return token
+from app.utils.utils import generate_token, ph, VerifyMismatchError
 
 class LoginUser(Mutation):
     class Arguments:
