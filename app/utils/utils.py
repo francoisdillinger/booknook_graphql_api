@@ -109,3 +109,26 @@ def add_initial_order_data(Order, db, orders_data):
         )
         db.session.add(new_order)
         db.session.commit()
+
+
+import os
+from dotenv import load_dotenv
+import jwt
+from datetime import datetime, timedelta
+
+load_dotenv()
+
+SECRET_KEY = os.getenv('SECRET_KEY')
+ALGORITHM = os.getenv('ALGORITHM')
+TOKEN_EXPIRATION_TIME_IN_MINUTES = int(os.getenv('TOKEN_EXPIRATION_TIME_IN_MINUTES'))
+
+
+def generate_token(email):
+    expiration_time = datetime.utcnow() + timedelta(minutes=TOKEN_EXPIRATION_TIME_IN_MINUTES)
+    payload = {
+        "email": email,
+        "exp": expiration_time
+        }
+    
+    token = jwt.encode(payload, SECRET_KEY, algorithm=ALGORITHM)
+    return token
