@@ -132,3 +132,8 @@ def generate_token(email):
     
     token = jwt.encode(payload, SECRET_KEY, algorithm=ALGORITHM)
     return token
+
+from argon2 import PasswordHasher
+from argon2.exceptions import VerifyMismatchError
+
+ph = PasswordHasher()
