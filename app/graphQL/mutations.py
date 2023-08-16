@@ -26,7 +26,7 @@ from app.db.models import (
     WishList
     )
 from app.graphQL.user.mutations import LoginUser
-from app.utils.utils import hash_password
+from app.utils.utils import hash_password, admin_user_required
 
 
 
@@ -103,6 +103,7 @@ class DeleteUser(Mutation):
     
     user = Field(lambda: UserObject)
 
+    @admin_user_required
     def mutate(root, info, user_id):
         user = db.session.query(User).filter(User.id == user_id).first()
 
@@ -121,6 +122,7 @@ class AddAuthor(Mutation):
     
     author = Field(lambda: AuthorObject)
 
+    @admin_user_required
     def mutate(root, info, author_first_name, author_last_name):
         author = Author(
             author_first_name=author_first_name,
@@ -140,6 +142,7 @@ class UpdateAuthor(Mutation):
     
     author = Field(lambda: AuthorObject)
 
+    @admin_user_required
     def mutate(root, info, author_id, author_first_name=None, author_last_name=None):
         # This is how you would do it if the session is being closed prematurely. I removed explicit closing of 
         # the session in mutations because it was causing issues and flask_sqlalchemy handles it for us.
@@ -166,6 +169,7 @@ class DeleteAuthor(Mutation):
     
     author = Field(lambda: AuthorObject)
 
+    @admin_user_required
     def mutate(root, info, author_id):
         author = db.session.query(Author).filter(Author.id == author_id).first()
 
@@ -190,6 +194,7 @@ class AddBook(Mutation):
 
     book = Field(lambda: BookObject)
 
+    @admin_user_required
     def mutate(root, info, book_title, page_count, publish_date, price, description, inventory_count, isbn, author_id):
         try:
             author = db.session.query(Author).filter(Author.id == author_id).one()
@@ -260,6 +265,7 @@ class DeleteBook(Mutation):
     
     book = Field(lambda: BookObject)
 
+    @admin_user_required
     def mutate(root, info, book_id):
         book = db.session.query(Book).filter(Book.id == book_id).first()
 
@@ -277,6 +283,7 @@ class AddCategory(Mutation):
     
     category = Field(lambda: CategoryObject)
 
+    @admin_user_required
     def mutate(root, info, category_name):
         category = Categories(
             category_name=category_name
@@ -314,6 +321,7 @@ class AddBookCategory(Mutation):
     
     book_category = Field(lambda: BookCategoriesObject)
 
+    @admin_user_required
     def mutate(root, info, book_id, category_id):
         try:
             book = db.session.query(Book).filter(Book.id == book_id).one()
@@ -372,6 +380,7 @@ class DeleteBookCategories(Mutation):
     
     book_category = Field(lambda: BookCategoriesObject)
 
+    @admin_user_required
     def mutate(root, info, book_id):
         # Make sure the book exists
         book = db.session.query(Book).filter(Book.id == book_id).first()
