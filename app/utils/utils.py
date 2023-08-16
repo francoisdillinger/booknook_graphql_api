@@ -7,6 +7,7 @@ from datetime import datetime, timedelta, timezone
 from argon2 import PasswordHasher
 from argon2.exceptions import VerifyMismatchError
 from app.db.models import User
+from functools import wraps
 
 load_dotenv()
 
@@ -162,7 +163,7 @@ def get_authenticated_user(context):
             if datetime.now(timezone.utc) > datetime.fromtimestamp(payload['exp'], tz=timezone.utc):
                 raise GraphQLError('Token has expired.')
             
-            user = db.session.query(User).filter(User.id == payload['sub']).first()
+            user = db.session.query(User).filter(User.email == payload['sub']).first()
 
             if not user:
                 raise GraphQLError('Could not authenticate user.')
@@ -172,3 +173,15 @@ def get_authenticated_user(context):
             raise GraphQLError('Invalid authentication token.')
     else:
         raise GraphQLError('No authentication token provided.')
+    
+
+def admin_user_required(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        info = args[1]
+        user = get_authenticated_user(info.context)
+
+        if user.role != 'admin':
+            raise GraphQLError('You do not have permission to perform this action.')
+        return func(*args, **kwargs)
+    return wrapper
