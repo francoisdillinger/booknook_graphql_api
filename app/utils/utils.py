@@ -185,3 +185,13 @@ def admin_user_required(func):
             raise GraphQLError('You do not have permission to perform this action.')
         return func(*args, **kwargs)
     return wrapper
+
+
+def authenticated_user_required(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        info = args[1]
+        get_authenticated_user(info.context)
+
+        return func(*args, **kwargs)
+    return wrapper
