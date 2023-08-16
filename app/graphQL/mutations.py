@@ -27,36 +27,7 @@ from app.db.models import (
     )
 from app.graphQL.user.mutations import LoginUser
 
-import jwt
-from datetime import datetime, timezone
-from app.utils.utils import SECRET_KEY, ALGORITHM
 
-def get_authenticated_user(context):
-    # Get the Authorization header
-    auth_header = context.headers.get('Authorization')
-    if auth_header:
-        token = auth_header.split(' ')[1]
-
-        try:
-            payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
-
-            if datetime.now(timezone.utc) > datetime.fromtimestamp(payload['exp'], tz=timezone.utc):
-                raise GraphQLError('Token has expired.')
-            
-            user = db.session.query(User).filter(User.id == payload['sub']).first()
-
-            if not user:
-                raise GraphQLError('Could not authenticate user.')
-            
-            return user
-        except jwt.exceptions.InvalidSignatureError:
-            raise GraphQLError('Invalid authentication token.')
-    else:
-        raise GraphQLError('No authentication token provided.')
-
-        
-    # If no Authorization header, return None
-    return None
 
 class AddUser(Mutation):
     class Arguments:
