@@ -3,9 +3,10 @@ import jwt
 from argon2 import PasswordHasher
 from graphql import GraphQLError
 from dotenv import load_dotenv
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from argon2 import PasswordHasher
 from argon2.exceptions import VerifyMismatchError
+from app.db.models import User
 
 load_dotenv()
 
@@ -147,3 +148,27 @@ def verify_password(hashed_password, password):
         ph.verify(hashed_password, password)
     except VerifyMismatchError:
         return GraphQLError('Invalid Email or password.')
+    
+
+def get_authenticated_user(context):
+    from app.db.database import db
+    auth_header = context.headers.get('Authorization')
+    if auth_header:
+        token = auth_header.split(' ')[1]
+
+        try:
+            payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
+
+            if datetime.now(timezone.utc) > datetime.fromtimestamp(payload['exp'], tz=timezone.utc):
+                raise GraphQLError('Token has expired.')
+            
+            user = db.session.query(User).filter(User.id == payload['sub']).first()
+
+            if not user:
+                raise GraphQLError('Could not authenticate user.')
+            
+            return user
+        except jwt.exceptions.InvalidSignatureError:
+            raise GraphQLError('Invalid authentication token.')
+    else:
+        raise GraphQLError('No authentication token provided.')
