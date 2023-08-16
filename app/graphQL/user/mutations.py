@@ -4,6 +4,7 @@ from app.db.models import User
 from app.db.database import db
 from app.utils.utils import generate_token, verify_password
 
+
 class LoginUser(Mutation):
     class Arguments:
         email = String(required=True)
