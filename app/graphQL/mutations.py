@@ -26,6 +26,7 @@ from app.db.models import (
     WishList
     )
 from app.graphQL.user.mutations import LoginUser
+from app.utils.utils import hash_password
 
 
 
@@ -41,14 +42,19 @@ class AddUser(Mutation):
     user = Field(lambda: UserObject)
 
     def mutate(root, info, user_name, password, email, first_name, last_name, role):
+
+        if db.session.query(User).filter(User.email == email).first():
+            raise GraphQLError('Email already exists.')
+        
         user = User(
             user_name=user_name,
-            password=password,
+            password= hash_password(password),
             email=email,
             first_name=first_name,
             last_name=last_name,
             role=role
         )
+
         db.session.add(user)
         db.session.commit()
         db.session.refresh(user)
