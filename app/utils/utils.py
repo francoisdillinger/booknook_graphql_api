@@ -127,7 +127,7 @@ def add_initial_order_data(Order, db, orders_data):
 def generate_token(email):
     expiration_time = datetime.utcnow() + timedelta(minutes=TOKEN_EXPIRATION_TIME_IN_MINUTES)
     payload = {
-        "email": email,
+        "sub": email,
         "exp": expiration_time
         }
     
