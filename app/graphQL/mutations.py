@@ -26,7 +26,7 @@ from app.db.models import (
     WishList
     )
 from app.graphQL.user.mutations import LoginUser
-from app.utils.utils import hash_password, admin_user_required
+from app.utils.utils import hash_password, admin_user_required, user_required
 
 
 
