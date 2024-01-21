@@ -26,7 +26,8 @@ from app.db.models import (
     WishList
     )
 from app.graphQL.user.mutations import LoginUser
-from app.utils.utils import hash_password, admin_user_required, user_required
+from app.utils.utils import hash_password, admin_user_required
+# from app.utils.utils import hash_password, admin_user_required, user_required
 
 
 
@@ -465,18 +466,23 @@ class AddOrder(Mutation):
         book_id = Int(required=True)
         quantity = Int(required=True)
         order_date = String(required=True)
+        order_amount = Int(required=True)
         # Come back and make sure you add a book price as we need to calculate the total price of the order
         # based on the current price of the book at the time or ordering since prices fluctuate in the real world.
 
     order = Field(lambda: OrderObject)
 
     def mutate(root, info, user_id, book_id, quantity, order_date, order_id):
+        # book = db.session.query(Book).filter(Book.id == book_id).first() 
+        # amount = book.price * quantity
+        print("Here is the order amount", amount)
         order = Order(
             order_id=order_id,
             user_id=user_id,
             book_id=book_id,
             quantity=quantity,
-            order_date=order_date
+            order_date=order_date,
+            order_amount = quantity * 4.95,
         )
         db.session.add(order)
         db.session.commit()
