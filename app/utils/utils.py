@@ -120,7 +120,8 @@ def add_initial_order_data(Order, db, orders_data):
             user_id=order['user_id'],
             book_id=order['book_id'],
             quantity=order['quantity'],
-            order_date=order['order_date']
+            order_date=order['order_date'],
+            order_amount = order['quantity'] * 4.95
         )
         db.session.add(new_order)
         db.session.commit()
