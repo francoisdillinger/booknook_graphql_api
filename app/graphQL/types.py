@@ -133,6 +133,8 @@ class OrderObject(ObjectType):
     book_id = Int()
     quantity = Int()
     order_date = String()
+    order_amount = Int()
+    
     book = Field(lambda: BookObject)
     user = Field(lambda: UserObject)
 
