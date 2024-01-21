@@ -110,6 +110,7 @@ class Order(Base):
     book_id = Column(Integer, ForeignKey('books.id'))
     quantity = Column(Integer)
     order_date = Column(String)
+    order_amount = Column(Integer)
     
     # Relations
     user = relationship('User', back_populates='orders')
