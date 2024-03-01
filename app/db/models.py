@@ -1,5 +1,5 @@
 from sqlalchemy.orm import declarative_base
-from sqlalchemy import Column, Integer, String, ForeignKey
+from sqlalchemy import Column, Integer, Numeric, String, ForeignKey
 from sqlalchemy.orm import relationship
 
 Base = declarative_base()
@@ -41,7 +41,7 @@ class Book(Base):
     book_title = Column(String)
     page_count = Column(Integer)
     publish_date = Column(String)
-    price = Column(Integer)
+    price = Column(Numeric(10, 2))
     description = Column(String)
     inventory_count = Column(Integer)
     isbn = Column(String)
@@ -110,7 +110,7 @@ class Order(Base):
     book_id = Column(Integer, ForeignKey('books.id'))
     quantity = Column(Integer)
     order_date = Column(String)
-    order_amount = Column(Integer)
+    order_amount = Column(Numeric(10, 2))
     
     # Relations
     user = relationship('User', back_populates='orders')
