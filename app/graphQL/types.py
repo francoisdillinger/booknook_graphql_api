@@ -1,4 +1,5 @@
-from graphene import ObjectType, String, Int, List, Field
+from graphene import Float, ObjectType, String, Int, List, Field
+from sqlalchemy import Numeric
 # from app.db.database import db
 # from app.db.models import User, Author, Book
 
@@ -46,7 +47,7 @@ class BookObject(ObjectType):
     book_title = String()
     page_count = Int()
     publish_date = String()
-    price = Int()
+    price = Float()
     description = String()
     inventory_count = Int()
     isbn = String()
@@ -133,8 +134,8 @@ class OrderObject(ObjectType):
     book_id = Int()
     quantity = Int()
     order_date = String()
-    order_amount = Int()
-    
+    order_amount = Float()
+
     book = Field(lambda: BookObject)
     user = Field(lambda: UserObject)
 
