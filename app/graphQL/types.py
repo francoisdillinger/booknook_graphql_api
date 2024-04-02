@@ -28,7 +28,7 @@ class UserObject(ObjectType):
         return root.orders
 
 class AuthorObject(ObjectType):
-    id = UUID()
+    # id = UUID()
     author_first_name = String()
     author_last_name = String()
     books = List(lambda: BookObject)
