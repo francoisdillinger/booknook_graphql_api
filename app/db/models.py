@@ -1,5 +1,5 @@
 from sqlalchemy.orm import declarative_base
-from sqlalchemy import Column, Integer, Numeric, String, ForeignKey
+from sqlalchemy import UUID, Column, Integer, Numeric, String, ForeignKey
 from sqlalchemy.orm import relationship
 
 Base = declarative_base()
@@ -27,7 +27,7 @@ class User(Base):
 class Author(Base):
     __tablename__ = 'authors'
 
-    id = Column(Integer, primary_key=True, autoincrement=True)
+    id = Column(UUID, primary_key=True)
     author_first_name = Column(String)
     author_last_name = Column(String)
 
