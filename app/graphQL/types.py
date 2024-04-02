@@ -1,4 +1,4 @@
-from graphene import Float, ObjectType, String, Int, List, Field
+from graphene import UUID, Float, ObjectType, String, Int, List, Field
 from sqlalchemy import Numeric
 # from app.db.database import db
 # from app.db.models import User, Author, Book
@@ -28,6 +28,7 @@ class UserObject(ObjectType):
         return root.orders
 
 class AuthorObject(ObjectType):
+    id = UUID()
     author_first_name = String()
     author_last_name = String()
     books = List(lambda: BookObject)
