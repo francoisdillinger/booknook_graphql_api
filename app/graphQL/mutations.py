@@ -1,4 +1,4 @@
-from graphene import Mutation, String, Int, Field, ObjectType
+from graphene import UUID, Mutation, String, Int, Field, ObjectType
 from app.db.database import db
 from sqlalchemy.orm import joinedload
 from sqlalchemy.orm.exc import NoResultFound
@@ -118,6 +118,7 @@ class DeleteUser(Mutation):
 
 class AddAuthor(Mutation):
     class Arguments:
+        id = UUID(required=True)
         author_first_name = String(required=True)
         author_last_name = String(required=True)
     
