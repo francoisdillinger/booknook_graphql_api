@@ -118,7 +118,7 @@ class DeleteUser(Mutation):
 
 class AddAuthor(Mutation):
     class Arguments:
-        id = UUID(required=True)
+        # id = UUID(required=True)
         author_first_name = String(required=True)
         author_last_name = String(required=True)
     
@@ -192,7 +192,7 @@ class AddBook(Mutation):
         description = String(required=True)
         inventory_count = Int(required=True)
         isbn = String(required=True)
-        author_id = Int(required=True)
+        author_id = UUID(required=True)
 
     book = Field(lambda: BookObject)
 
