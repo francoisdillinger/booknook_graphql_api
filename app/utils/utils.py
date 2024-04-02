@@ -44,7 +44,7 @@ def add_initial_author_data(Author, db, authors_data):
     print('Creating initial author data.')
     for author in authors_data:
         new_author = Author(
-            id=uuid.uuid4(),
+            # id=uuid.uuid4(),
             author_first_name=author['author_first_name'],
             author_last_name=author['author_last_name']
         )
