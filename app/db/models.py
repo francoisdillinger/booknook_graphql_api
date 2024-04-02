@@ -45,7 +45,7 @@ class Book(Base):
     description = Column(String)
     inventory_count = Column(Integer)
     isbn = Column(String)
-    author_id = Column(Integer, ForeignKey('authors.id'))
+    author_id = Column(UUID, ForeignKey('authors.id'))
     
     # Relations
     author = relationship('Author', back_populates='books')
