@@ -2,6 +2,7 @@ import json
 import uuid
 from books_data import books_data
 from users_data import users_data
+import book_reviews_data
 # def add_book_id(book_data):
 #     book_data["book_id"] = str(uuid.uuid4())
 #     return book_data
@@ -25,18 +26,42 @@ from users_data import users_data
 #         file.write(python_code)
 
 
-def add_user_id(user):
-    user["user_id"] = str(uuid.uuid4())
-    return user
+# def add_user_id(user):
+#     user["user_id"] = str(uuid.uuid4())
+#     return user
+
+# def main():
+#     modified_users = [add_user_id(user) for user in users_data]
+
+#     with open("modified_users.py", "w") as file:
+#         file.write("users = [\n")
+#         for user in modified_users:
+#             file.write("    " + str(user) + ",\n")
+#         file.write("]\n")
+
+
+
+def add_review_id(review):
+    review["review_id"] = str(uuid.uuid4())
+    return review
+
+def generate_python_code(reviews_data):
+    python_code = "reviews_data = [\n"
+    for review in reviews_data:
+        python_code += "    " + str(review) + ",\n"
+    python_code += "]\n"
+    return python_code
 
 def main():
-    modified_users = [add_user_id(user) for user in users_data]
-
-    with open("modified_users.py", "w") as file:
-        file.write("users = [\n")
-        for user in modified_users:
-            file.write("    " + str(user) + ",\n")
-        file.write("]\n")
+    # Add review_id to each review
+    modified_reviews_data = [add_review_id(review) for review in book_reviews_data.reviews_data]
+    
+    # Generate Python code
+    python_code = generate_python_code(modified_reviews_data)
+    
+    # Write Python code to a new file
+    with open("modified_reviews.py", "w") as file:
+        file.write(python_code)
 
 
 if __name__ == "__main__":
