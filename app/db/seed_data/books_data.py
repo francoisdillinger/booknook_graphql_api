@@ -817,6 +817,56 @@ books_data = [
     "isbn": "9780679745204",
     "author_id": "3cc83653-8655-4395-b14e-6126e7446fc2"
   },
+    {
+    "book_title": "The Sense of an Ending",
+    "page_count": 163,
+    "publish_date": "2011-08-04",
+    "price": 14.95,
+    "description": "Julian Barnes's Man Booker Prize-winning novel is a story of memory and remorse, exploring the unreliability of memory and how it can lead to self-deception.",
+    "inventory_count": 80,
+    "isbn": "9780307957122",
+    "author_id": "9d345051-b205-4cdd-9711-a9150a3f8fe4"
+  },
+  {
+    "book_title": "The Unbearable Lightness of Being",
+    "page_count": 314,
+    "publish_date": "1984-01-01",
+    "price": 18.00,
+    "description": "Milan Kundera’s novel of love and politics in Communist-era Prague explores the lives and loves of a small group of characters, interweaving their personal stories with philosophical musings on existence.",
+    "inventory_count": 70,
+    "isbn": "9780060932138",
+    "author_id": "29f6e97e-b42a-4e6d-9b0e-2dc8e601eb51"
+  },
+  {
+    "book_title": "Infinite Jest",
+    "page_count": 1079,
+    "publish_date": "1996-02-01",
+    "price": 20.00,
+    "description": "David Foster Wallace's magnum opus, a vast, encyclopedic novel set in a near-future America, explores themes of addiction, entertainment, and the pursuit of happiness in a consumer society.",
+    "inventory_count": 60,
+    "isbn": "9780316066525",
+    "author_id": "ac3fdc65-fe7a-4985-86ff-3476d7cf6cc9"
+  },
+  {
+    "book_title": "The Tale of Genji",
+    "page_count": 1176,
+    "publish_date": "1001-01-01",
+    "price": 25.00,
+    "description": "Written in the 11th century by Murasaki Shikibu, a lady in the Heian court of Japan, The Tale of Genji is considered the world's first novel, offering a richly detailed portrait of courtly life in medieval Japan.",
+    "inventory_count": 50,
+    "isbn": "9780679417385",
+    "author_id": "bd610b47-b38c-4928-87f7-038048156b1b"
+  },
+  {
+    "book_title": "A Room with a View",
+    "page_count": 256,
+    "publish_date": "1908-01-01",
+    "price": 12.00,
+    "description": "E.M. Forster's beloved novel is a social critique and comedy of manners set in Edwardian England, following the romantic travails of a young woman, Lucy Honeychurch.",
+    "inventory_count": 75,
+    "isbn": "9780141183297",
+    "author_id": "8ac0cd63-3c60-4e7e-b39a-665011161c68"
+  },
   
 ]
 
