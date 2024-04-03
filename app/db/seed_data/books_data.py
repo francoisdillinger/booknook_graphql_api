@@ -767,6 +767,56 @@ books_data = [
     "isbn": "9780679720201",
     "author_id": "d54293d0-48ac-449b-9e99-1b0e198fb629"
   },
+    {
+    "book_title": "Waiting for Godot",
+    "page_count": 128,
+    "publish_date": "1953-01-05",
+    "price": 14.00,
+    "description": "Beckett's landmark play presents two characters, Vladimir and Estragon, who wait for the arrival of someone named Godot who never arrives, and while waiting they engage in a variety of discussions and encounter three other characters.",
+    "inventory_count": 60,
+    "isbn": "9780571244591",
+    "author_id": "585560b5-8ca1-437f-923d-d29a7a6a72d2"
+  },
+  {
+    "book_title": "On the Road",
+    "page_count": 310,
+    "publish_date": "1957-09-05",
+    "price": 16.00,
+    "description": "Kerouac's seminal novel defined the Beat Generation. It is a largely autobiographical work that is based on the spontaneous road trips of Kerouac and his friends across mid-century America.",
+    "inventory_count": 70,
+    "isbn": "9780140283297",
+    "author_id": "040669fa-5a20-4c57-bd98-06e9f7a358db"
+  },
+  {
+    "book_title": "Naked Lunch",
+    "page_count": 255,
+    "publish_date": "1959-01-01",
+    "price": 15.95,
+    "description": "Burroughs' controversial novel is a surreal, nonlinear narrative that challenges traditional narrative structures while critiquing the drug culture of the 1950s.",
+    "inventory_count": 55,
+    "isbn": "9780802122070",
+    "author_id": "7458ca3a-b8d6-4baa-a9aa-83bda28b904c"
+  },
+  {
+    "book_title": "Atonement",
+    "page_count": 371,
+    "publish_date": "2001-09-04",
+    "price": 18.95,
+    "description": "McEwan's novel is a profound, deeply moving story about love, guilt, and forgiveness, set against the backdrop of World War II. It explores the devastating impact of a young girl's false accusation on herself and on the lives of two lovers.",
+    "inventory_count": 65,
+    "isbn": "9780385721790",
+    "author_id": "30063476-55f5-4ff8-8203-268905d540cb"
+  },
+  {
+    "book_title": "The English Patient",
+    "page_count": 320,
+    "publish_date": "1992-11-05",
+    "price": 14.95,
+    "description": "Ondaatje's Booker Prize-winning novel intertwines the lives of four diverse characters in the aftermath of World War II, centering on the mysterious identity of a badly burned man, the titular English patient.",
+    "inventory_count": 80,
+    "isbn": "9780679745204",
+    "author_id": "3cc83653-8655-4395-b14e-6126e7446fc2"
+  },
   
 ]
 
