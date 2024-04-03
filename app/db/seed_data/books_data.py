@@ -327,6 +327,127 @@ books_data = [
     "isbn": "9780486411071",
     "author_id": "84b7e973-ece3-4ce3-82ac-34375a69993d"
   },
+    {
+    "book_title": "The Weary Blues",
+    "page_count": 104,
+    "publish_date": "1926-01-01",
+    "price": 12.00,
+    "description": "Hughes's first book of poetry, 'The Weary Blues,' describes the blues as both a major influence on his poetry and a major theme of his work.",
+    "inventory_count": 50,
+    "isbn": "9780486454481",
+    "author_id": "ae029772-9302-4516-89ba-18dc518b7ae1"
+  },
+  {
+    "book_title": "The Collected Poems of Langston Hughes",
+    "page_count": 736,
+    "publish_date": "1994-10-31",
+    "price": 22.00,
+    "description": "This collection presents 860 poems written by Hughes, one of the leading voices of the Harlem Renaissance.",
+    "inventory_count": 80,
+    "isbn": "9780679764083",
+    "author_id": "ae029772-9302-4516-89ba-18dc518b7ae1"
+  },
+  {
+    "book_title": "The Bell Jar",
+    "page_count": 288,
+    "publish_date": "1963-01-14",
+    "price": 17.00,
+    "description": "Plath's semi-autobiographical novel, which details the descent of Esther Greenwood, a young woman moving to New York City, into mental illness.",
+    "inventory_count": 90,
+    "isbn": "9780060837020",
+    "author_id": "7989698a-1c58-400f-9a2c-3b2ce6a07f15"
+  },
+  {
+    "book_title": "Brave New World",
+    "page_count": 311,
+    "publish_date": "1932-01-01",
+    "price": 15.99,
+    "description": "Huxley's masterpiece and arguably one of the most prescient dystopian works of the 20th century, imagining a future with a rigidly controlled society.",
+    "inventory_count": 70,
+    "isbn": "9780060850524",
+    "author_id": "54de300c-c508-4e55-ba71-e38df42cc218"
+  },
+  {
+    "book_title": "Moby-Dick",
+    "page_count": 752,
+    "publish_date": "1851-10-18",
+    "price": 18.00,
+    "description": "Melville's epic tale of obsession and revenge on the high seas, as Captain Ahab hunts the white whale, Moby-Dick, who maimed him.",
+    "inventory_count": 85,
+    "isbn": "9780142437247",
+    "author_id": "de777e19-98bd-4da0-af06-653de1c60549"
+  },
+  {
+    "book_title": "Little Women",
+    "page_count": 449,
+    "publish_date": "1868-09-30",
+    "price": 12.95,
+    "description": "Alcott's beloved novel follows the lives of the four March sisters—Meg, Jo, Beth, and Amy—and their journey from childhood to womanhood.",
+    "inventory_count": 75,
+    "isbn": "9780147514011",
+    "author_id": "2246b53e-366a-4670-a137-5918f55f480b"
+  },
+    {
+    "book_title": "The Picture of Dorian Gray",
+    "page_count": 224,
+    "publish_date": "1890-06-20",
+    "price": 10.99,
+    "description": "Oscar Wilde's only novel, it tells the story of a young man named Dorian Gray, who becomes the subject of a painting. As he seeks a life of pleasure and indulgence, he discovers that his portrait ages, reflecting the moral corruption of his choices, while he remains outwardly unchanged.",
+    "inventory_count": 80,
+    "isbn": "9780141439570",
+    "author_id": "ab94b9de-2d6b-4c20-a024-d80d829b7887"
+  },
+  {
+    "book_title": "The Importance of Being Earnest",
+    "page_count": 76,
+    "publish_date": "1895-02-14",
+    "price": 6.95,
+    "description": "A farcical comedy in which the protagonists maintain fictitious personae to escape burdensome social obligations. Wilde's most enduringly popular play.",
+    "inventory_count": 95,
+    "isbn": "9780486264784",
+    "author_id": "ab94b9de-2d6b-4c20-a024-d80d829b7887"
+  },
+  {
+    "book_title": "The Adventures of Sherlock Holmes",
+    "page_count": 307,
+    "publish_date": "1892-10-14",
+    "price": 12.99,
+    "description": "A collection of twelve short stories featuring Conan Doyle's legendary detective, Sherlock Holmes, and his loyal assistant Dr. Watson, as they solve mysteries in late 19th-century London.",
+    "inventory_count": 70,
+    "isbn": "9780755334507",
+    "author_id": "fc2a1880-41f4-44f6-8937-472995f0f884"
+  },
+  {
+    "book_title": "The Grapes of Wrath",
+    "page_count": 464,
+    "publish_date": "1939-04-14",
+    "price": 14.00,
+    "description": "John Steinbeck's epic novel of the Great Depression follows the Joad family as they're driven from their Oklahoma home and journey to California in search of work and a better life.",
+    "inventory_count": 85,
+    "isbn": "9780143039433",
+    "author_id": "fa4fc70b-9594-461c-b967-a58f58ff8ded"
+  },
+  {
+    "book_title": "The Great Gatsby",
+    "page_count": 180,
+    "publish_date": "1925-04-10",
+    "price": 15.00,
+    "description": "F. Scott Fitzgerald's masterpiece, a tragic love story set in the roaring twenties, which explores themes of decadence, idealism, resistance to change, social upheaval, and excess.",
+    "inventory_count": 90,
+    "isbn": "9780743273565",
+    "author_id": "873ac726-d4ee-42e6-a0c7-fabc4494d0b2"
+  },
+  {
+    "book_title": "American Gods",
+    "page_count": 465,
+    "publish_date": "2001-06-19",
+    "price": 19.99,
+    "description": "Neil Gaiman's novel blends Americana, fantasy, and various strands of ancient and modern mythology, all centering on the mysterious and taciturn Shadow.",
+    "inventory_count": 88,
+    "isbn": "9780062572233",
+    "author_id": "e126fdfb-6d08-4f72-98fc-900d9ff62890"
+  },
+  
 ]
 
 # books_data = [
