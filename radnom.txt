@@ -1,0 +1,125 @@
+Paulo Coelho
+Jane Austen
+Mark Twain
+Virginia Woolf
+Leo Tolstoy
+Fyodor Dostoevsky
+Ernest Hemingway
+J.R.R. Tolkien
+George Orwell
+William Faulkner
+Agatha Christie
+James Joyce
+Franz Kafka
+Toni Morrison
+Gabriel García Márquez
+Haruki Murakami
+J.K. Rowling
+Stephen King
+Maya Angelou
+Kurt Vonnegut
+Harper Lee
+Ray Bradbury
+H.G. Wells
+Edgar Allan Poe
+Emily Dickinson
+Langston Hughes
+Sylvia Plath
+Aldous Huxley
+Herman Melville
+Louisa May Alcott
+Oscar Wilde
+Arthur Conan Doyle
+John Steinbeck
+F. Scott Fitzgerald
+Neil Gaiman
+Philip K. Dick
+Margaret Atwood
+Orhan Pamuk
+Isabel Allende
+Kazuo Ishiguro
+Doris Lessing
+Vladimir Nabokov
+Salman Rushdie
+Cormac McCarthy
+J.D. Salinger
+Alice Walker
+Chinua Achebe
+Anne Frank
+Charlotte Brontë
+Mary Shelley
+Alexandre Dumas
+Charles Dickens
+Rudyard Kipling
+Gustave Flaubert
+Nathaniel Hawthorne
+George Eliot
+Henrik Ibsen
+Thomas Hardy
+Henry James
+Kate Chopin
+Anton Chekhov
+Edith Wharton
+Marcel Proust
+T.S. Eliot
+Albert Camus
+Samuel Beckett
+Jack Kerouac
+William S. Burroughs
+Ian McEwan
+Michael Ondaatje
+Julian Barnes
+Milan Kundera
+David Foster Wallace
+Murasaki Shikibu
+E.M. Forster
+Graham Greene
+Saul Bellow
+Flannery O'Connor
+Seamus Heaney
+Derek Walcott
+Thomas Mann
+Jorge Luis Borges
+Italo Calvino
+Jose Saramago
+Primo Levi
+Umberto Eco
+Zadie Smith
+Elena Ferrante
+Chimamanda Ngozi Adichie
+Colson Whitehead
+Jean-Paul Sartre
+Simone de Beauvoir
+Roald Dahl
+Patricia Highsmith
+Elie Wiesel
+Maurice Sendak
+Shel Silverstein
+Carlos Ruiz Zafón
+Dan Brown
+Ann Patchett
+
+
+Create author data for the following authors:
+Doris Lessing,
+Vladimir Nabokov,
+Salman Rushdie,
+Cormac McCarthy,
+J.D. Salinger,
+Alice Walker,
+Chinua Achebe,
+Anne Frank,
+Charlotte Brontë,
+Mary Shelley,
+Alexandre Dumas,
+Charles Dickens,
+Rudyard Kipling,
+Gustave Flaubert,
+Nathaniel Hawthorne,
+George Eliot,
+Henrik Ibsen,
+Thomas Hardy,
+Henry James,
+Kate Chopin,
+
+Using the following format: { "id":uuid v4 number, "author_first_name": author firstname, "author_last_name": author lastname },
