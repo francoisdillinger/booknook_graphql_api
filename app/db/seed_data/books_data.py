@@ -7,6 +7,7 @@ books_data = [
   'inventory_count': 12,
   'isbn': '9780062315007',
   'author_id': '779fa00a-09d6-444e-9ce8-540e65ac5e19'},
+
  {'book_title': 'Pride and Prejudice',
   'page_count': 432,
   'publish_date': '1813-01-28',
@@ -15,6 +16,7 @@ books_data = [
   'inventory_count': 74,
   'isbn': '9781503290563',
   'author_id': '8283a8d6-e43b-4e48-8b4b-229e7a3f9a7f'},
+
  {'book_title': 'Adventures of Huckleberry Finn',
   'page_count': 366,
   'publish_date': '1884-12-10',
@@ -23,6 +25,7 @@ books_data = [
   'inventory_count': 81,
   'isbn': '9780486400778',
   'author_id': '78f2351f-8786-45f6-8e8e-78d3dc51e9fa'},
+
  {'book_title': 'Mrs. Dalloway',
   'page_count': 194,
   'publish_date': '1925-05-14',
@@ -31,6 +34,7 @@ books_data = [
   'inventory_count': 87,
   'isbn': '9780156628709',
   'author_id': 'a41e87a3-ed5a-432b-88e8-ac5d971f1c36'},
+
  {'book_title': 'Anna Karenina',
   'page_count': 864,
   'publish_date': '1877-04-01',
@@ -39,6 +43,7 @@ books_data = [
   'inventory_count': 67,
   'isbn': '9781400079988',
   'author_id': '19730510-9a97-4ce9-a39d-506bb7ff1a8f'},
+
  {'book_title': 'Warrior of the Light',
   'page_count': 160,
   'publish_date': '2003-03-30',
@@ -47,6 +52,7 @@ books_data = [
   'inventory_count': 36,
   'isbn': '9780060527983',
   'author_id': '779fa00a-09d6-444e-9ce8-540e65ac5e19'},
+
  {'book_title': 'Emma',
   'page_count': 544,
   'publish_date': '1815-12-25',
@@ -55,6 +61,7 @@ books_data = [
   'inventory_count': 41,
   'isbn': '9780141439587',
   'author_id': '8283a8d6-e43b-4e48-8b4b-229e7a3f9a7f'},
+
  {'book_title': 'Life on the Mississippi',
   'page_count': 624,
   'publish_date': '1883-01-01',
@@ -63,6 +70,7 @@ books_data = [
   'inventory_count': 6,
   'isbn': '9780486414263',
   'author_id': '78f2351f-8786-45f6-8e8e-78d3dc51e9fa'},
+
  {'book_title': 'Orlando',
   'page_count': 256,
   'publish_date': '1928-10-11',
@@ -78,7 +86,87 @@ books_data = [
   'description': 'A novella by Leo Tolstoy, considered one of the masterpieces of his late fiction, written shortly after his religious conversion of the late 1870s.',
   'inventory_count': 29,
   'isbn': '9780486435091',
-  'author_id': '19730510-9a97-4ce9-a39d-506bb7ff1a8f'}
+  'author_id': '19730510-9a97-4ce9-a39d-506bb7ff1a8f'},
+    {
+    "book_title": "The Brothers Karamazov",
+    "page_count": 796,
+    "publish_date": "1880-11-01",
+    "price": 15.95,
+    "description": "The final novel by Dostoevsky delves into the lives of the troubled Karamazov family, exploring deep philosophical questions of faith, doubt, and reason.",
+    "inventory_count": 72,
+    "isbn": "9780486437913",
+    "author_id": "cc198234-0a02-4299-bd2f-fdba9edfbbf8"
+  },
+  {
+    "book_title": "Notes from Underground",
+    "page_count": 136,
+    "publish_date": "1864-01-01",
+    "price": 6.95,
+    "description": "A short and powerful novel that introduces Dostoevsky's most important themes—psychological depth, existential despair, and the quest for meaning in a seemingly indifferent world.",
+    "inventory_count": 85,
+    "isbn": "9780486270531",
+    "author_id": "cc198234-0a02-4299-bd2f-fdba9edfbbf8"
+  },
+  {
+    "book_title": "For Whom the Bell Tolls",
+    "page_count": 480,
+    "publish_date": "1940-10-21",
+    "price": 17.00,
+    "description": "Set against the backdrop of the Spanish Civil War, Hemingway's novel explores themes of love, loss, and the harsh realities of war.",
+    "inventory_count": 63,
+    "isbn": "9780684803357",
+    "author_id": "ae4b05b4-5e7b-44dc-9851-e8be1c36a79d"
+  },
+  {
+    "book_title": "A Farewell to Arms",
+    "page_count": 332,
+    "publish_date": "1929-09-01",
+    "price": 16.00,
+    "description": "A novel of love and war, telling the story of an American ambulance driver on the Italian front and his passion for a beautiful English nurse.",
+    "inventory_count": 57,
+    "isbn": "9780142437339",
+    "author_id": "ae4b05b4-5e7b-44dc-9851-e8be1c36a79d"
+  },
+  {
+    "book_title": "The Hobbit",
+    "page_count": 310,
+    "publish_date": "1937-09-21",
+    "price": 14.99,
+    "description": "Bilbo Baggins, a hobbit enjoying his quiet life, is thrust into an epic quest by the wizard Gandalf and a group of dwarves to reclaim their mountain home from a dragon.",
+    "inventory_count": 94,
+    "isbn": "9780547928227",
+    "author_id": "b79427dc-0222-4547-8392-07cedf7a3e74"
+  },
+  {
+    "book_title": "Animal Farm",
+    "page_count": 112,
+    "publish_date": "1945-08-17",
+    "price": 9.99,
+    "description": "A farm is taken over by its overworked, mistreated animals. With flaming idealism and stirring slogans, they set out to create a paradise of progress, justice, and equality.",
+    "inventory_count": 88,
+    "isbn": "9780451526342",
+    "author_id": "2c7320aa-327a-4d3f-bd77-67fd4e9415ce"
+  },
+  {
+    "book_title": "As I Lay Dying",
+    "page_count": 267,
+    "publish_date": "1930-10-06",
+    "price": 14.95,
+    "description": "The novel tells the story of the death of Addie Bundren and her poor, rural family's quest and motivations—noble or selfish—to honor her wish to be buried in the town of Jefferson.",
+    "inventory_count": 50,
+    "isbn": "9780679732259",
+    "author_id": "9e668a21-9cd9-4c4f-aa01-76993332fec5"
+  },
+  {
+    "book_title": "The Sound and the Fury",
+    "page_count": 326,
+    "publish_date": "1929-10-07",
+    "price": 15.00,
+    "description": "This novel captures the lives of the Compson family, focusing on the decline of the once-aristocratic clan and the fading of their Southern traditions, seen through the eyes of three brothers.",
+    "inventory_count": 77,
+    "isbn": "9780679732242",
+    "author_id": "9e668a21-9cd9-4c4f-aa01-76993332fec5"
+  },
 ]
 
 # books_data = [
