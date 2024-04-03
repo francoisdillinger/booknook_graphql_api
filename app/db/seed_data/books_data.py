@@ -667,6 +667,56 @@ books_data = [
     "isbn": "9780486280486",
     "author_id": "fcef9d8f-34f5-4e4f-89d1-c003412b3128"
   },
+    {
+    "book_title": "Middlemarch",
+    "page_count": 904,
+    "publish_date": "1871-12-01",
+    "price": 18.00,
+    "description": "George Eliot's complex tale of life in a provincial English town, Middlemarch explores the intricate web of relationships and the challenges of making choices that affect the rest of one's life.",
+    "inventory_count": 70,
+    "isbn": "9780141439549",
+    "author_id": "3d7e1546-5b3b-41ef-87ce-8455f07dbf3e"
+  },
+  {
+    "book_title": "A Doll's House",
+    "page_count": 96,
+    "publish_date": "1879-12-01",
+    "price": 9.99,
+    "description": "Henrik Ibsen's groundbreaking play challenges the traditional roles of men and women in 19th-century marriage. Nora Helmer's journey to self-discovery and liberation remains a powerful statement on gender norms and individual freedom.",
+    "inventory_count": 85,
+    "isbn": "9780486270623",
+    "author_id": "6cf6bc91-3581-4090-9c07-d4d6ff311897"
+  },
+  {
+    "book_title": "Tess of the d'Urbervilles",
+    "page_count": 592,
+    "publish_date": "1891-11-01",
+    "price": 12.00,
+    "description": "Thomas Hardy's novel traces the life of Tess Durbeyfield, a young woman whose destiny is shaped by the Victorian society in which she lives and the social mores that dictate her fate.",
+    "inventory_count": 78,
+    "isbn": "9780141439594",
+    "author_id": "8944c8bb-b36a-4707-88b6-7512799b3f7f"
+  },
+  {
+    "book_title": "The Turn of the Screw",
+    "page_count": 120,
+    "publish_date": "1898-10-01",
+    "price": 6.95,
+    "description": "Henry James's chilling ghost story centers around a governess who becomes convinced that the children in her care are being stalked by malevolent ghosts.",
+    "inventory_count": 92,
+    "isbn": "9780486266849",
+    "author_id": "ab019136-649b-451b-85b7-cef10d56495c"
+  },
+  {
+    "book_title": "The Awakening",
+    "page_count": 195,
+    "publish_date": "1899-04-22",
+    "price": 7.99,
+    "description": "Kate Chopin's novel is a daring exploration of female independence and sexuality. Edna Pontellier's struggle to reconcile her unorthodox views on femininity and motherhood with the prevailing social attitudes of the turn-of-the-century American South is compelling and tragic.",
+    "inventory_count": 80,
+    "isbn": "9780486277868",
+    "author_id": "2d7532d3-6f13-4805-b900-0a934d58c725"
+  },
   
 ]
 
