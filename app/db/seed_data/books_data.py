@@ -517,6 +517,56 @@ books_data = [
     "isbn": "9781400078774",
     "author_id": "24bad126-0f71-4de7-b639-289fb5fa4c27"
   },
+    {
+    "book_title": "The Golden Notebook",
+    "page_count": 688,
+    "publish_date": "1962-01-01",
+    "price": 18.00,
+    "description": "Lessing's groundbreaking novel interweaves the lives of four women through the diary of one. Exploring themes of communism, women's liberation, and the nuclear scare, it remains a fresh and powerful work today.",
+    "inventory_count": 60,
+    "isbn": "9780060931407",
+    "author_id": "bc952cd7-225f-44b7-a975-6a668a781afb"
+  },
+  {
+    "book_title": "Lolita",
+    "page_count": 336,
+    "publish_date": "1955-08-18",
+    "price": 14.95,
+    "description": "Nabokov's controversial novel tells the story of Humbert Humbert, a literature professor, and his obsession with the 12-year-old Dolores Haze. Told with a lyrical mastery, Lolita explores dark themes with irony and wit.",
+    "inventory_count": 75,
+    "isbn": "9780679723165",
+    "author_id": "6e2fa70c-e7c2-4e26-b49d-754736f4fd5c"
+  },
+  {
+    "book_title": "Midnight's Children",
+    "page_count": 536,
+    "publish_date": "1981-04-18",
+    "price": 19.00,
+    "description": "Rushdie's novel, winner of the Booker Prize, chronicles the life of Saleem Sinai, born at the moment of India's independence, who finds himself 'handcuffed to history' with bizarre consequences.",
+    "inventory_count": 88,
+    "isbn": "9780812976533",
+    "author_id": "15f351fd-97ef-4291-a7e0-9f1abaa0471a"
+  },
+  {
+    "book_title": "The Road",
+    "page_count": 287,
+    "publish_date": "2006-09-26",
+    "price": 15.95,
+    "description": "McCarthy's post-apocalyptic novel of a father and son's journey through a burned America is a haunting tale of survival and love.",
+    "inventory_count": 70,
+    "isbn": "9780307387899",
+    "author_id": "ce57bca3-ca68-43b9-9102-239ff653438b"
+  },
+  {
+    "book_title": "The Catcher in the Rye",
+    "page_count": 234,
+    "publish_date": "1951-07-16",
+    "price": 9.99,
+    "description": "Salinger's classic novel of teenage rebellion and angst. The narrative follows Holden Caulfield's experiences in New York City after being expelled from prep school.",
+    "inventory_count": 85,
+    "isbn": "9780316769488",
+    "author_id": "0402bda8-1bba-42dd-8fbe-ed48ddc1d491"
+  },
   
 ]
 
