@@ -167,6 +167,56 @@ books_data = [
     "isbn": "9780679732242",
     "author_id": "9e668a21-9cd9-4c4f-aa01-76993332fec5"
   },
+    {
+    "book_title": "Murder on the Orient Express",
+    "page_count": 256,
+    "publish_date": "1934-01-01",
+    "price": 14.99,
+    "description": "A classic mystery novel featuring the Belgian detective Hercule Poirot, who investigates a murder aboard the famous train. Christie's ingenious plot twists will keep you guessing until the very end.",
+    "inventory_count": 90,
+    "isbn": "9780062693662",
+    "author_id": "f320efd3-ba7d-41ab-bf02-503189318d63"
+  },
+  {
+    "book_title": "Ulysses",
+    "page_count": 730,
+    "publish_date": "1922-02-02",
+    "price": 23.00,
+    "description": "Joyce's groundbreaking novel chronicles the peripatetic appointments and encounters of Leopold Bloom in Dublin in the course of an ordinary day, 16 June 1904.",
+    "inventory_count": 70,
+    "isbn": "9780141182803",
+    "author_id": "e510348a-d8bd-4b1d-bcde-a4e8f30aef1d"
+  },
+  {
+    "book_title": "The Trial",
+    "page_count": 304,
+    "publish_date": "1925-01-01",
+    "price": 12.95,
+    "description": "Kafka's nightmarish tale of a man arrested and prosecuted by a remote, inaccessible authority, with the nature of his crime revealed neither to him nor the reader.",
+    "inventory_count": 80,
+    "isbn": "9780805209990",
+    "author_id": "ab25f66b-2b22-4f27-ac88-5526e2359d4f"
+  },
+  {
+    "book_title": "Beloved",
+    "page_count": 324,
+    "publish_date": "1987-09-01",
+    "price": 16.00,
+    "description": "Morrison's novel examines the haunting legacy of slavery, as a mother makes a horrifying choice out of love that resonates across generations.",
+    "inventory_count": 85,
+    "isbn": "9781400033416",
+    "author_id": "60c07ad1-f495-412c-9d6a-268497cc9864"
+  },
+  {
+    "book_title": "One Hundred Years of Solitude",
+    "page_count": 417,
+    "publish_date": "1967-06-05",
+    "price": 18.99,
+    "description": "Márquez's epic tells the story of the Buendía family over seven generations, blending the magical and the real in a vividly painted Colombian landscape.",
+    "inventory_count": 95,
+    "isbn": "9780060883287",
+    "author_id": "f3d83e18-6d8d-4e34-a27c-f9a02d26e5ec"
+  },
 ]
 
 # books_data = [
