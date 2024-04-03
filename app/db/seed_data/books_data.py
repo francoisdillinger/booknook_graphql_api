@@ -967,6 +967,56 @@ books_data = [
     "isbn": "9780349100135",
     "author_id": "816c5d26-a35f-4746-bafa-5765da151ba8"
   },
+    {
+    "book_title": "The Name of the Rose",
+    "page_count": 512,
+    "publish_date": "1980-01-01",
+    "price": 18.95,
+    "description": "Umberto Eco's debut novel combines mystery, historical fiction, and semiotics in 1327, where Brother William of Baskerville arrives at a monastery to attend a theological dispute but gets involved in solving a series of mysterious deaths.",
+    "inventory_count": 90,
+    "isbn": "9780151446476",
+    "author_id": "fd7b8f70-ec74-410b-869b-55838004b03f"
+  },
+  {
+    "book_title": "White Teeth",
+    "page_count": 448,
+    "publish_date": "2000-01-01",
+    "price": 14.00,
+    "description": "Zadie Smith's acclaimed debut novel is a vibrant, multigenerational story about two families in London, exploring Britain's relationship with people from formerly colonized countries in Africa, Asia, and the Caribbean.",
+    "inventory_count": 85,
+    "isbn": "9780375703867",
+    "author_id": "e5b3b407-d66e-430e-bc05-8e74bdfea0a7"
+  },
+  {
+    "book_title": "My Brilliant Friend",
+    "page_count": 331,
+    "publish_date": "2011-01-01",
+    "price": 17.00,
+    "description": "The first book in Elena Ferrante's Neapolitan Novels, it chronicles the friendship between Elena Greco and Raffaella Cerullo from their childhoods in a poor neighborhood in Naples through their adult lives.",
+    "inventory_count": 80,
+    "isbn": "9781609450786",
+    "author_id": "287c9417-f8c5-4967-9ee6-9df2f746a56a"
+  },
+  {
+    "book_title": "Americanah",
+    "page_count": 588,
+    "publish_date": "2013-05-14",
+    "price": 16.00,
+    "description": "A powerful story of love, race, and identity from the award-winning author Chimamanda Ngozi Adichie, 'Americanah' is a tale of a young Nigerian woman who emigrates to the United States for a university education and stays for work.",
+    "inventory_count": 70,
+    "isbn": "9780307455925",
+    "author_id": "806eb25a-bd93-41ba-87ea-e2796f8be8ee"
+  },
+  {
+    "book_title": "The Underground Railroad",
+    "page_count": 320,
+    "publish_date": "2016-08-02",
+    "price": 16.95,
+    "description": "Colson Whitehead's Pulitzer Prize-winning novel is a magnificent, harrowing account of Cora, a slave on a cotton plantation in Georgia, and her journey to freedom via a secret network of tracks and tunnels beneath the Southern soil.",
+    "inventory_count": 75,
+    "isbn": "9780385542364",
+    "author_id": "21ce8037-6c63-4a1e-9a4a-7300d12ff77d"
+  },
   
 ]
 
