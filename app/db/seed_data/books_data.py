@@ -1067,7 +1067,106 @@ books_data = [
     "isbn": "9780374500016",
     "author_id": "cbcf1268-c931-4696-a833-b0fa6dbc28b0"
   },
-  
+    {
+    "book_title": "Where the Wild Things Are",
+    "page_count": 48,
+    "publish_date": "1963-11-09",
+    "price": 8.99,
+    "description": "One night Max puts on his wolf suit and makes mischief of one kind and another, so his mother calls him 'Wild Thing' and sends him to bed without his supper. That night a forest begins to grow in Max's room and an adventure awaits him that is nothing short of magical.",
+    "inventory_count": 62,
+    "isbn": "9780064431781",
+    "author_id": "36c3a32c-7c4a-459e-a5d1-ecb0b0f2fc9a"
+  },
+  {
+    "book_title": "In the Night Kitchen",
+    "page_count": 38,
+    "publish_date": "1970-10-28",
+    "price": 7.99,
+    "description": "When Mickey falls out of bed and lands in the Night Kitchen, he travels through an amazing dream adventure filled with bakers made of bread, a wild journey in an empty batter bowl, and some very close calls with the oven's blazing heat.",
+    "inventory_count": 47,
+    "isbn": "9780060266684",
+    "author_id": "36c3a32c-7c4a-459e-a5d1-ecb0b0f2fc9a"
+  },
+  {
+    "book_title": "The Giving Tree",
+    "page_count": 64,
+    "publish_date": "1964-10-07",
+    "price": 10.99,
+    "description": "This beloved classic celebrates the gift of giving and the wise generosity of a tree that gives everything it has to a young boy as he grows older. This heartwarming story teaches the importance of selflessness, sacrifice, and unconditional love.",
+    "inventory_count": 89,
+    "isbn": "9780060256654",
+    "author_id": "c9d35043-73dc-4dcb-8ff4-8f16968e6c56"
+  },
+  {
+    "book_title": "Where the Sidewalk Ends",
+    "page_count": 176,
+    "publish_date": "1974-01-01",
+    "price": 12.99,
+    "description": "This classic poetry collection is a celebration of childhood, imagination, and the everyday wonders of life. With whimsical illustrations and playful verses, Shel Silverstein invites readers on a magical journey through a world of wonder and possibility.",
+    "inventory_count": 75,
+    "isbn": "9780060256692",
+    "author_id": "c9d35043-73dc-4dcb-8ff4-8f16968e6c56"
+  },
+  {
+    "book_title": "The Shadow of the Wind",
+    "page_count": 487,
+    "publish_date": "2001-10-16",
+    "price": 16.95,
+    "description": "This gothic novel set in post-war Barcelona follows the journey of a young boy who discovers a mysterious book by an obscure author and becomes obsessed with unraveling the secrets behind the book's shadowy past. A captivating tale of love, literature, and the power of stories.",
+    "inventory_count": 32,
+    "isbn": "9780143034902",
+    "author_id": "0a36b922-1b36-4200-a103-282b03a29fb4"
+  },
+  {
+    "book_title": "The Angel's Game",
+    "page_count": 531,
+    "publish_date": "2008-06-24",
+    "price": 17.99,
+    "description": "In this Gothic literary thriller set in the turbulent Barcelona of the 1920s, a struggling writer is offered a tantalizing deal by a mysterious publisher, but soon finds himself trapped in a nightmare of his own making. A gripping exploration of the dark side of creativity and the power of storytelling.",
+    "inventory_count": 21,
+    "isbn": "9780142020161",
+    "author_id": "0a36b922-1b36-4200-a103-282b03a29fb4"
+  },
+  {
+    "book_title": "The Da Vinci Code",
+    "page_count": 454,
+    "publish_date": "2003-03-18",
+    "price": 9.99,
+    "description": "This blockbuster thriller by Dan Brown follows symbologist Robert Langdon as he becomes embroiled in a deadly mystery that unravels the ancient secrets of the Priory of Sion and the truth about the Holy Grail. A pulse-pounding adventure filled with codes, conspiracies, and shocking revelations.",
+    "inventory_count": 68,
+    "isbn": "9780307277671",
+    "author_id": "40134642-8951-49b0-8a4c-6772c4b421dd"
+  },
+  {
+    "book_title": "Angels & Demons",
+    "page_count": 736,
+    "publish_date": "2000-04-01",
+    "price": 10.99,
+    "description": "In this thrilling novel by Dan Brown, Harvard symbologist Robert Langdon is summoned to a Swiss research facility to analyze a mysterious symbol seared into the chest of a murdered physicist. What follows is a breathtaking adventure that takes Langdon deep into the ancient world of the Illuminati, a legendary secret society with a history of violence and conspiracy.",
+    "inventory_count": 55,
+    "isbn": "9780671027360",
+    "author_id": "40134642-8951-49b0-8a4c-6772c4b421dd"
+  },
+  {
+    "book_title": "The Dutch House",
+    "page_count": 337,
+    "publish_date": "2019-09-24",
+    "price": 16.99,
+    "description": "This richly moving novel by Ann Patchett spans five decades and explores the bond between two siblings, their complex relationship with their wealthy but dysfunctional family, and the enduring power of the past. A compelling story of love, loss, and the unbreakable ties that bind families together.",
+    "inventory_count": 48,
+    "isbn": "9780062963680",
+    "author_id": "7579612e-eb59-450d-9587-838b92964a6d"
+  },
+  {
+    "book_title": "Commonwealth",
+    "page_count": 322,
+    "publish_date": "2016-09-13",
+    "price": 15.95,
+    "description": "Ann Patchett's masterful novel explores the intertwined lives of two families, bound together by a heartbreaking shared tragedy and the secrets they keep. A profound exploration of the ties that bind us, the illusions that blind us, and the truths that ultimately set us free.",
+    "inventory_count": 37,
+    "isbn": "9780062491817",
+    "author_id": "7579612e-eb59-450d-9587-838b92964a6d"
+  }
 ]
 
 # books_data = [
