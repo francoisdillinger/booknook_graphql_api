@@ -447,6 +447,76 @@ books_data = [
     "isbn": "9780062572233",
     "author_id": "e126fdfb-6d08-4f72-98fc-900d9ff62890"
   },
+    {
+    "book_title": "Do Androids Dream of Electric Sheep?",
+    "page_count": 210,
+    "publish_date": "1968-03-01",
+    "price": 14.99,
+    "description": "This novel, set in a post-apocalyptic San Francisco, follows Rick Deckard, a bounty hunter tasked with 'retiring' rogue androids. It explores themes of what it means to be human and the nature of humanity.",
+    "inventory_count": 80,
+    "isbn": "9780345404473",
+    "author_id": "665f841e-75e9-44bb-9cb8-ca78752b4b78"
+  },
+  {
+    "book_title": "The Man in the High Castle",
+    "page_count": 274,
+    "publish_date": "1962-01-01",
+    "price": 13.95,
+    "description": "An alternate history novel set in a world where the Axis powers won World War II. The story follows several characters living in the 1960s United States, now divided between Japan and Nazi Germany.",
+    "inventory_count": 65,
+    "isbn": "9780547572482",
+    "author_id": "665f841e-75e9-44bb-9cb8-ca78752b4b78"
+  },
+  {
+    "book_title": "The Handmaid's Tale",
+    "page_count": 311,
+    "publish_date": "1985-04-01",
+    "price": 15.95,
+    "description": "In a dystopian future, where a totalitarian regime enforces subservient roles on all women, Offred navigates the dangers of her reality with strength and cunning.",
+    "inventory_count": 90,
+    "isbn": "9780385490818",
+    "author_id": "876dcb7c-c4ab-4f78-bef2-fb8a00980358"
+  },
+  {
+    "book_title": "Oryx and Crake",
+    "page_count": 400,
+    "publish_date": "2003-05-06",
+    "price": 16.95,
+    "description": "Atwood's speculative fiction masterpiece, exploring genetic engineering and its impacts on humanity through the eyes of its protagonist, Snowman.",
+    "inventory_count": 75,
+    "isbn": "9780385503853",
+    "author_id": "876dcb7c-c4ab-4f78-bef2-fb8a00980358"
+  },
+  {
+    "book_title": "My Name Is Red",
+    "page_count": 432,
+    "publish_date": "1998-01-01",
+    "price": 17.00,
+    "description": "Set in late 16th century Istanbul, Pamuk's novel weaves a tale of intrigue and romance, centered around the Ottoman Empire's illustrious miniature artists.",
+    "inventory_count": 82,
+    "isbn": "9780375706851",
+    "author_id": "e06c4323-387e-4ebb-8161-292026077b46"
+  },
+  {
+    "book_title": "The House of the Spirits",
+    "page_count": 448,
+    "publish_date": "1982-10-01",
+    "price": 18.00,
+    "description": "Allende's debut novel, combining magical realism with political and social insight, it tells the epic story of the Trueba family over several generations.",
+    "inventory_count": 70,
+    "isbn": "9781501117015",
+    "author_id": "ee888d45-4f8c-4818-83d8-83e0db69597f"
+  },
+  {
+    "book_title": "Never Let Me Go",
+    "page_count": 288,
+    "publish_date": "2005-04-05",
+    "price": 16.00,
+    "description": "Ishiguro's haunting story of Kathy, Tommy, and Ruth, and their journey of memories and the truth about their seemingly idyllic school, Hailsham, which hides a dark secret.",
+    "inventory_count": 88,
+    "isbn": "9781400078774",
+    "author_id": "24bad126-0f71-4de7-b639-289fb5fa4c27"
+  },
   
 ]
 
