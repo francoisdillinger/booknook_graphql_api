@@ -567,6 +567,56 @@ books_data = [
     "isbn": "9780316769488",
     "author_id": "0402bda8-1bba-42dd-8fbe-ed48ddc1d491"
   },
+    {
+    "book_title": "The Color Purple",
+    "page_count": 294,
+    "publish_date": "1982-06-01",
+    "price": 18.99,
+    "description": "Alice Walker's groundbreaking novel is a heart-wrenching, yet hopeful tale of a young African American woman's journey through abuse and oppression to find her own voice and power in early 20th century Georgia.",
+    "inventory_count": 92,
+    "isbn": "9780151191536",
+    "author_id": "fc9ced59-aa4e-4617-83e0-3992e0bcbfd9"
+  },
+  {
+    "book_title": "Things Fall Apart",
+    "page_count": 209,
+    "publish_date": "1958-06-17",
+    "price": 12.99,
+    "description": "Chinua Achebe's masterpiece tells the story of Okonkwo, a proud and powerful village leader amongst the Igbo in Nigeria, and the tragic unraveling of his life as a result of colonialism.",
+    "inventory_count": 80,
+    "isbn": "9780385474542",
+    "author_id": "f968cb73-8eed-4006-9f7f-4ac1ed183aa4"
+  },
+  {
+    "book_title": "The Diary of a Young Girl",
+    "page_count": 283,
+    "publish_date": "1947-06-25",
+    "price": 10.00,
+    "description": "Anne Frank's diary offers a compelling and deeply personal account of life under Nazi occupation through the eyes of a young Jewish girl.",
+    "inventory_count": 95,
+    "isbn": "9780553296983",
+    "author_id": "7197a74a-69d4-4661-8372-5f38ed6dc04b"
+  },
+  {
+    "book_title": "Jane Eyre",
+    "page_count": 500,
+    "publish_date": "1847-10-16",
+    "price": 9.99,
+    "description": "Charlotte Brontë's novel is a fiery classic of the Victorian era, telling the tale of Jane Eyre's rise from orphaned child to a woman in her own right, navigating love, morality, and social class.",
+    "inventory_count": 88,
+    "isbn": "9780141441146",
+    "author_id": "025bc38c-9ef7-496c-9e95-6d7af056f429"
+  },
+  {
+    "book_title": "Frankenstein",
+    "page_count": 280,
+    "publish_date": "1818-01-01",
+    "price": 7.95,
+    "description": "Mary Shelley's groundbreaking work of science fiction and horror tells the story of Victor Frankenstein, a young scientist who creates a grotesque creature in an unorthodox scientific experiment.",
+    "inventory_count": 76,
+    "isbn": "9780486282114",
+    "author_id": "fbe285c2-edac-49e7-b622-8e2bd6e6faf9"
+  },
   
 ]
 
