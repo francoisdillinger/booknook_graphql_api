@@ -277,6 +277,56 @@ books_data = [
     "isbn": "9780385333481",
     "author_id": "a303ae3e-c2be-4a19-80b8-1b28bc6aabeb"
   },
+    {
+    "book_title": "Go Set a Watchman",
+    "page_count": 278,
+    "publish_date": "2015-07-14",
+    "price": 27.99,
+    "description": "Originally written in the mid-1950s, Go Set a Watchman was the novel Harper Lee first submitted to her publishers before To Kill a Mockingbird. It features many of the characters from the latter novel some twenty years later.",
+    "inventory_count": 82,
+    "isbn": "9780062409850",
+    "author_id": "a98359d9-0d50-469e-9c98-2557d43f9b9c"
+  },
+  {
+    "book_title": "Fahrenheit 451",
+    "page_count": 158,
+    "publish_date": "1953-10-19",
+    "price": 15.99,
+    "description": "A dystopian novel by American writer Ray Bradbury, about a future American society where books are outlawed and 'firemen' burn any that are found. The novel presents a future American society where books are outlawed and 'firemen' burn any that are found.",
+    "inventory_count": 90,
+    "isbn": "9781451673319",
+    "author_id": "ba6835fe-babb-40f4-ab70-9cb04f9efc88"
+  },
+  {
+    "book_title": "The War of the Worlds",
+    "page_count": 192,
+    "publish_date": "1898-01-01",
+    "price": 8.99,
+    "description": "An early science fiction work by H.G. Wells that describes an invasion of late Victorian England by Martians equipped with advanced weaponry. It is a seminal depiction of an alien invasion of Earth.",
+    "inventory_count": 76,
+    "isbn": "9780486295060",
+    "author_id": "8c87a0c5-c01e-470f-b256-5776ab33dd96"
+  },
+  {
+    "book_title": "The Tell-Tale Heart and Other Writings",
+    "page_count": 448,
+    "publish_date": "1982-10-01",
+    "price": 6.95,
+    "description": "A collection of Poe's most famous tales and poems, featuring 'The Tell-Tale Heart,' 'The Fall of the House of Usher,' 'The Cask of Amontillado,' and others. These tales explore themes of death, decay, and madness.",
+    "inventory_count": 65,
+    "isbn": "9780553212280",
+    "author_id": "eba08f6a-63ae-4808-a778-479ffc4fbb8b"
+  },
+  {
+    "book_title": "Selected Poems of Emily Dickinson",
+    "page_count": 256,
+    "publish_date": "2000-01-01",
+    "price": 12.00,
+    "description": "Emily Dickinson's poetry is a profound and largely idiosyncratic exploration of the mysteries of life, death, and nature. This selection includes some of her most famous poems, providing a good introduction to her work.",
+    "inventory_count": 50,
+    "isbn": "9780486411071",
+    "author_id": "84b7e973-ece3-4ce3-82ac-34375a69993d"
+  },
 ]
 
 # books_data = [
