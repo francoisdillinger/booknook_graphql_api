@@ -867,6 +867,56 @@ books_data = [
     "isbn": "9780141183297",
     "author_id": "8ac0cd63-3c60-4e7e-b39a-665011161c68"
   },
+    {
+    "book_title": "The End of the Affair",
+    "page_count": 160,
+    "publish_date": "1951-01-01",
+    "price": 14.95,
+    "description": "Set in London during and just after the Second World War, the novel revolves around the relationships between Maurice Bendrix and Sarah Miles, and explores themes of love, obsession, and faith.",
+    "inventory_count": 85,
+    "isbn": "9780141441122",
+    "author_id": "549c2c00-904a-406f-a9b3-45897b39005f"
+  },
+  {
+    "book_title": "Henderson the Rain King",
+    "page_count": 352,
+    "publish_date": "1959-01-01",
+    "price": 16.00,
+    "description": "Bellow's novel follows the journey of Eugene Henderson, a wealthy but unsatisfied American, as he seeks fulfillment in Africa. It is a blend of humor, philosophy, and social commentary.",
+    "inventory_count": 75,
+    "isbn": "9780140189421",
+    "author_id": "2e15976a-ebae-4e00-8f79-1faa2db9a582"
+  },
+  {
+    "book_title": "A Good Man Is Hard to Find",
+    "page_count": 256,
+    "publish_date": "1955-01-01",
+    "price": 15.00,
+    "description": "O'Connor's collection of short stories showcases her unique blend of comic and tragic, mundane and grotesque, revealing the human condition and the Southern gothic aesthetic.",
+    "inventory_count": 90,
+    "isbn": "9780156364652",
+    "author_id": "9b6a996e-273d-40e5-b6d6-133c7aa25b06"
+  },
+  {
+    "book_title": "Death of a Naturalist",
+    "page_count": 64,
+    "publish_date": "1966-01-01",
+    "price": 12.00,
+    "description": "Heaney's first major published volume explores rural life and childhood, presenting a collection that is both accessible and deeply rooted in the soil of Northern Ireland.",
+    "inventory_count": 80,
+    "isbn": "9780571230839",
+    "author_id": "44d67304-f6d5-4ea5-bb58-f5067104b107"
+  },
+  {
+    "book_title": "Omeros",
+    "page_count": 325,
+    "publish_date": "1990-01-01",
+    "price": 18.00,
+    "description": "Walcott's epic poem reimagines the Trojan War as a Caribbean narrative, exploring themes of colonization, identity, and the legacy of slavery.",
+    "inventory_count": 60,
+    "isbn": "9780374523503",
+    "author_id": "2cfab642-6e50-4c9a-9863-8d86d4fdc6d1"
+  },
   
 ]
 
