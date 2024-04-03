@@ -217,6 +217,66 @@ books_data = [
     "isbn": "9780060883287",
     "author_id": "f3d83e18-6d8d-4e34-a27c-f9a02d26e5ec"
   },
+    {
+    "book_title": "Norwegian Wood",
+    "page_count": 296,
+    "publish_date": "1987-09-04",
+    "price": 15.00,
+    "description": "A poignant story of one college student's romantic coming-of-age, Norwegian Wood takes us to that distant place of a young man's first, hopeless, and heroic love.",
+    "inventory_count": 85,
+    "isbn": "9780375704024",
+    "author_id": "8d820051-04b1-4d4f-999b-4c762a023286"
+  },
+  {
+    "book_title": "1Q84",
+    "page_count": 928,
+    "publish_date": "2009-05-29",
+    "price": 22.95,
+    "description": "An ode to George Orwell's '1984' told in a world with two moons, 1Q84 is a fascinating, complex novel of love, terror, and longing.",
+    "inventory_count": 75,
+    "isbn": "9780307593313",
+    "author_id": "8d820051-04b1-4d4f-999b-4c762a023286"
+  },
+  {
+    "book_title": "Harry Potter and the Chamber of Secrets",
+    "page_count": 341,
+    "publish_date": "1998-07-02",
+    "price": 12.99,
+    "description": "The second installment in the Harry Potter series finds Harry and his friends facing new challenges, including the legend of the Chamber of Secrets.",
+    "inventory_count": 93,
+    "isbn": "9780439064873",
+    "author_id": "d063d6d6-4fb8-4e3b-9d9a-b8e9a70b2d29"
+  },
+  {
+    "book_title": "The Stand",
+    "page_count": 1153,
+    "publish_date": "1978-10-03",
+    "price": 18.00,
+    "description": "Stephen King's apocalyptic vision of a world blasted by plague and embroiled in an elemental struggle between good and evil.",
+    "inventory_count": 80,
+    "isbn": "9780307743688",
+    "author_id": "0cab471e-fda3-41f7-a936-cdfcd8f35154"
+  },
+  {
+    "book_title": "And Still I Rise",
+    "page_count": 67,
+    "publish_date": "1978-08-17",
+    "price": 17.00,
+    "description": "Maya Angelou's third volume of poetry is a powerful collection that spans many years of her life. Her heartfelt and poignant poems speak to the resilience of the human spirit.",
+    "inventory_count": 62,
+    "isbn": "9780394502526",
+    "author_id": "e1bba2d8-9338-4ced-9f66-9611eee9dbe5"
+  },
+  {
+    "book_title": "Cat's Cradle",
+    "page_count": 304,
+    "publish_date": "1963-04-11",
+    "price": 15.95,
+    "description": "Vonnegut's satirical commentary on modern man and his madness. An apocalyptic tale of this planet's ultimate fate, it features a midget as the protagonist.",
+    "inventory_count": 88,
+    "isbn": "9780385333481",
+    "author_id": "a303ae3e-c2be-4a19-80b8-1b28bc6aabeb"
+  },
 ]
 
 # books_data = [
