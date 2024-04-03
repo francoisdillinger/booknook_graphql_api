@@ -717,6 +717,56 @@ books_data = [
     "isbn": "9780486277868",
     "author_id": "2d7532d3-6f13-4805-b900-0a934d58c725"
   },
+    {
+    "book_title": "The Cherry Orchard",
+    "page_count": 96,
+    "publish_date": "1904-01-17",
+    "price": 10.00,
+    "description": "Chekhov's last play, a masterpiece of modern drama, portrays the decline of the aristocratic Ranevskaya family and the sale of their estate, including its much-loved cherry orchard.",
+    "inventory_count": 70,
+    "isbn": "9780486275482",
+    "author_id": "cde3152c-07a3-402a-8324-76ce14975f91"
+  },
+  {
+    "book_title": "The Age of Innocence",
+    "page_count": 365,
+    "publish_date": "1920-09-01",
+    "price": 14.00,
+    "description": "Wharton's Pulitzer Prize-winning novel captures the hypocrisy and rigidity of New York high society in the late 19th century through the story of Newland Archer's conflicted desires.",
+    "inventory_count": 80,
+    "isbn": "9780486298030",
+    "author_id": "a49c3520-f9a5-4ec3-8870-903a4de34791"
+  },
+  {
+    "book_title": "In Search of Lost Time",
+    "page_count": 4215,
+    "publish_date": "1913-11-01",
+    "price": 100.00,
+    "description": "Proust's monumental work, also known as 'Remembrance of Things Past', delves deep into themes of memory, time, and art, narrated in exquisite detail and emotional depth.",
+    "inventory_count": 50,
+    "isbn": "9780679443654",
+    "author_id": "26516908-c1f5-421e-afae-3b1fade413ed"
+  },
+  {
+    "book_title": "The Waste Land",
+    "page_count": 64,
+    "publish_date": "1922-10-15",
+    "price": 12.00,
+    "description": "Eliot's landmark poem, 'The Waste Land', remains one of the 20th century's most influential works, offering a powerful critique of post-World War I disillusionment.",
+    "inventory_count": 95,
+    "isbn": "9780141185154",
+    "author_id": "0e93f6c6-a239-4260-a2b6-6e044beacc7e"
+  },
+  {
+    "book_title": "The Stranger",
+    "page_count": 123,
+    "publish_date": "1942-06-19",
+    "price": 13.95,
+    "description": "Camus's existential masterpiece tells the story of Meursault, an indifferent French Algerian who commits a random act of violence, reflecting the absurdity of life.",
+    "inventory_count": 85,
+    "isbn": "9780679720201",
+    "author_id": "d54293d0-48ac-449b-9e99-1b0e198fb629"
+  },
   
 ]
 
