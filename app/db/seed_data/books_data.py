@@ -917,6 +917,56 @@ books_data = [
     "isbn": "9780374523503",
     "author_id": "2cfab642-6e50-4c9a-9863-8d86d4fdc6d1"
   },
+    {
+    "book_title": "The Magic Mountain",
+    "page_count": 720,
+    "publish_date": "1924-01-01",
+    "price": 20.00,
+    "description": "Thomas Mann's epic novel of ideas follows young Hans Castorp as he visits a Swiss sanatorium, intending to stay for three weeks but ends up being there for seven years, encountering a microcosm of European society on the eve of World War I.",
+    "inventory_count": 80,
+    "isbn": "9780679772873",
+    "author_id": "8e741b61-72c5-4e4e-a8af-9cf8eef5c0a8"
+  },
+  {
+    "book_title": "Ficciones",
+    "page_count": 174,
+    "publish_date": "1944-01-01",
+    "price": 15.00,
+    "description": "A collection of short stories by Jorge Luis Borges offering intricate tales of a universe where the boundaries of reality and fiction blur. 'Ficciones' explores themes of labyrinths, mirrors, infinite libraries, and the nature of authorship.",
+    "inventory_count": 70,
+    "isbn": "9780802130303",
+    "author_id": "7f82a43c-a83c-4f0d-9932-bbf49f591fab"
+  },
+  {
+    "book_title": "Invisible Cities",
+    "page_count": 165,
+    "publish_date": "1972-01-01",
+    "price": 14.00,
+    "description": "Italo Calvino's imaginative text offers a conversation between the aging emperor Kublai Khan and the young explorer Marco Polo, describing fantastical cities across the empire, exploring themes of memory, desire, and the nature of human experience.",
+    "inventory_count": 85,
+    "isbn": "9780156453806",
+    "author_id": "57d0e7d4-b3a6-4823-948e-8580640d8a55"
+  },
+  {
+    "book_title": "Blindness",
+    "page_count": 352,
+    "publish_date": "1995-01-01",
+    "price": 16.00,
+    "description": "A powerful allegorical novel by José Saramago about a society suffering an epidemic of blindness that reveals both the dignity and depravity of humanity.",
+    "inventory_count": 75,
+    "isbn": "9780156007757",
+    "author_id": "2e42da73-e564-4c84-88a6-74109563c342"
+  },
+  {
+    "book_title": "If This Is a Man",
+    "page_count": 400,
+    "publish_date": "1947-01-01",
+    "price": 14.95,
+    "description": "Primo Levi's memoir of his year spent in Auschwitz is a lucid and sober account of the everyday realities of life in the Holocaust, offering insight into the human condition under the most extreme circumstances.",
+    "inventory_count": 60,
+    "isbn": "9780349100135",
+    "author_id": "816c5d26-a35f-4746-bafa-5765da151ba8"
+  },
   
 ]
 
