@@ -1017,6 +1017,56 @@ books_data = [
     "isbn": "9780385542364",
     "author_id": "21ce8037-6c63-4a1e-9a4a-7300d12ff77d"
   },
+    {
+    "book_title": "Nausea",
+    "page_count": 178,
+    "publish_date": "1938-01-01",
+    "price": 15.95,
+    "description": "Jean-Paul Sartre's philosophical novel that introduces the concept of existentialism through the experience of its protagonist, Antoine Roquentin, who confronts the absurdity of existence.",
+    "inventory_count": 90,
+    "isbn": "9780811220309",
+    "author_id": "703688cc-7bd1-4f94-bbf2-fb77519301b8"
+  },
+  {
+    "book_title": "The Second Sex",
+    "page_count": 800,
+    "publish_date": "1949-01-01",
+    "price": 20.00,
+    "description": "In this seminal work, Simone de Beauvoir analyzes the female condition and the form of oppression known as patriarchy, presenting a detailed discussion of women's roles and status in society.",
+    "inventory_count": 80,
+    "isbn": "9780307277787",
+    "author_id": "6cc2d004-0350-47ef-b9dc-c75ae56236c7"
+  },
+  {
+    "book_title": "Charlie and the Chocolate Factory",
+    "page_count": 160,
+    "publish_date": "1964-01-01",
+    "price": 7.99,
+    "description": "Roald Dahl's famous story of Charlie Bucket, the five Golden Tickets, and Willy Wonka's mysterious chocolate factory has delighted children and adults alike for generations.",
+    "inventory_count": 85,
+    "isbn": "9780142410318",
+    "author_id": "a600fd74-47d9-46dd-82e0-2e6fdd14b8b7"
+  },
+  {
+    "book_title": "The Talented Mr. Ripley",
+    "page_count": 272,
+    "publish_date": "1955-01-01",
+    "price": 14.00,
+    "description": "Patricia Highsmith's psychological thriller introduces Tom Ripley, a young striver newly arrived in the heady world of Manhattan, who becomes entangled in a complex web of deceit.",
+    "inventory_count": 75,
+    "isbn": "9780393332148",
+    "author_id": "388a8a87-65ea-4e60-ad1b-2e2fc6131f44"
+  },
+  {
+    "book_title": "Night",
+    "page_count": 120,
+    "publish_date": "1956-01-01",
+    "price": 9.95,
+    "description": "Elie Wiesel's masterful work is a poignant and powerful autobiographical account of his survival as a teenager in the Nazi death camps.",
+    "inventory_count": 100,
+    "isbn": "9780374500016",
+    "author_id": "cbcf1268-c931-4696-a833-b0fa6dbc28b0"
+  },
   
 ]
 
