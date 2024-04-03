@@ -617,6 +617,56 @@ books_data = [
     "isbn": "9780486282114",
     "author_id": "fbe285c2-edac-49e7-b622-8e2bd6e6faf9"
   },
+    {
+    "book_title": "The Count of Monte Cristo",
+    "page_count": 1276,
+    "publish_date": "1844-08-01",
+    "price": 20.00,
+    "description": "A tale of wrongfully imprisoned Edmond Dantès who escapes from jail, acquires a fortune, and sets about getting revenge on those responsible for his imprisonment. Dumas' epic adventure offers readers a mix of intrigue, romance, and revenge.",
+    "inventory_count": 85,
+    "isbn": "9780140449266",
+    "author_id": "b91a05d6-1670-43e5-9757-e72b2dfc354e"
+  },
+  {
+    "book_title": "A Tale of Two Cities",
+    "page_count": 544,
+    "publish_date": "1859-04-30",
+    "price": 14.00,
+    "description": "Set in London and Paris before and during the French Revolution, the novel tells the story of a French doctor's release from imprisonment and the complexities of his life that intertwine with the lives of his daughter and others amidst the turmoil of the revolution.",
+    "inventory_count": 75,
+    "isbn": "9780141439600",
+    "author_id": "170cd91c-1dfd-4d74-ab04-65759c44c723"
+  },
+  {
+    "book_title": "The Jungle Book",
+    "page_count": 240,
+    "publish_date": "1894-01-01",
+    "price": 12.99,
+    "description": "A collection of stories by Rudyard Kipling, featuring tales of Mowgli, a boy raised by wolves in the Indian jungle. These stories, which also feature a variety of other jungle animals, are noted for their moral lessons and vivid descriptions.",
+    "inventory_count": 90,
+    "isbn": "9780141325293",
+    "author_id": "7a82c24e-240b-458f-89be-ea81952f721d"
+  },
+  {
+    "book_title": "Madame Bovary",
+    "page_count": 320,
+    "publish_date": "1856-01-01",
+    "price": 11.95,
+    "description": "Gustave Flaubert's debut novel is a meticulous depiction of bourgeois triviality and a woman's pursuit of the extraordinary in her life, leading to her eventual downfall.",
+    "inventory_count": 60,
+    "isbn": "9780140449129",
+    "author_id": "14b0d2b0-e758-41e3-a863-59597b951f41"
+  },
+  {
+    "book_title": "The Scarlet Letter",
+    "page_count": 256,
+    "publish_date": "1850-03-16",
+    "price": 8.95,
+    "description": "Set in Puritan Massachusetts Bay Colony during the years 1642 to 1649, Hawthorne's novel tells the story of Hester Prynne, who conceives a daughter through an affair and struggles to create a new life of repentance and dignity.",
+    "inventory_count": 80,
+    "isbn": "9780486280486",
+    "author_id": "fcef9d8f-34f5-4e4f-89d1-c003412b3128"
+  },
   
 ]
 
