@@ -8,7 +8,7 @@ class User(Base):
     __tablename__ = 'users'
 
     # id = Column(Integer, primary_key=True, autoincrement=True)
-    id = Column(UUID, primary_key=True, autoincrement=True)
+    id = Column(UUID, primary_key=True)
     user_name = Column(String)
     # -----------------------------------------------------------------------------------------------------
     # Might want to change this to hashed_password
@@ -40,7 +40,7 @@ class Book(Base):
     __tablename__ = 'books'
     
     # id = Column(Integer, primary_key=True, autoincrement=True)
-    id = Column(UUID, primary_key=True, autoincrement=True)
+    id = Column(UUID, primary_key=True)
     book_title = Column(String)
     page_count = Column(Integer)
     publish_date = Column(String)
@@ -48,8 +48,8 @@ class Book(Base):
     description = Column(String)
     inventory_count = Column(Integer)
     isbn = Column(String)
-    # author_id = Column(UUID, ForeignKey('authors.id'))
-    author_id = Column(Integer, ForeignKey('authors.id'))
+    author_id = Column(UUID, ForeignKey('authors.id'))
+    # author_id = Column(Integer, ForeignKey('authors.id'))
     
     # Relations
     author = relationship('Author', back_populates='books')
@@ -63,9 +63,11 @@ class Review(Base):
     __tablename__ = 'reviews'
 
     # id = Column(Integer, primary_key=True, autoincrement=True)
-    id = Column(UUID, primary_key=True, autoincrement=True)
-    user_id = Column(Integer, ForeignKey('users.id'))
-    book_id = Column(Integer, ForeignKey('books.id'))
+    id = Column(UUID, primary_key=True)
+    # user_id = Column(Integer, ForeignKey('users.id'))
+    # book_id = Column(Integer, ForeignKey('books.id'))
+    user_id = Column(UUID, ForeignKey('users.id'))
+    book_id = Column(UUID, ForeignKey('books.id'))
     rating = Column(Integer)
     review = Column(String)
     
@@ -76,7 +78,8 @@ class Review(Base):
 class Categories(Base):
     __tablename__ = 'categories'
 
-    id = Column(Integer, primary_key=True, autoincrement=True)
+    # id = Column(Integer, primary_key=True, autoincrement=True)
+    id = Column(UUID, primary_key=True)
     category_name = Column(String)
     
     # Relations
@@ -86,9 +89,13 @@ class Categories(Base):
 class BookCategories(Base):
     __tablename__ = 'book_categories'
 
-    id = Column(Integer, primary_key=True, autoincrement=True)
-    book_id = Column(Integer, ForeignKey('books.id'))
-    category_id = Column(Integer, ForeignKey('categories.id'))
+    # id = Column(Integer, primary_key=True, autoincrement=True)
+    # book_id = Column(Integer, ForeignKey('books.id'))
+    # category_id = Column(Integer, ForeignKey('categories.id'))
+
+    id = Column(UUID, primary_key=True)
+    book_id = Column(UUID, ForeignKey('books.id'))
+    category_id = Column(UUID, ForeignKey('categories.id'))
     
     # Relations
     book = relationship('Book', back_populates='book_categories')
@@ -97,9 +104,12 @@ class BookCategories(Base):
 class Cart(Base):
     __tablename__ = 'cart'
 
-    id = Column(Integer, primary_key=True, autoincrement=True)
-    user_id = Column(Integer, ForeignKey('users.id'))
-    book_id = Column(Integer, ForeignKey('books.id'))
+    # id = Column(Integer, primary_key=True, autoincrement=True)
+    # user_id = Column(Integer, ForeignKey('users.id'))
+    # book_id = Column(Integer, ForeignKey('books.id'))
+    id = Column(UUID, primary_key=True)
+    user_id = Column(UUID, ForeignKey('users.id'))
+    book_id = Column(UUID, ForeignKey('books.id'))
     quantity = Column(Integer)
     
     # Relations
@@ -109,11 +119,14 @@ class Cart(Base):
 class Order(Base):
     __tablename__ = 'orders'
 
-    # id = Column(Integer, primary_key=True, autoincrement=True)
-    id = Column(UUID, primary_key=True, autoincrement=True)
-    order_id = Column(String)
-    user_id = Column(Integer, ForeignKey('users.id'))
-    book_id = Column(Integer, ForeignKey('books.id'))
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    # user_id = Column(Integer, ForeignKey('users.id'))
+    # book_id = Column(Integer, ForeignKey('books.id'))
+
+    # id = Column(UUID)
+    order_id = Column(UUID)
+    user_id = Column(UUID, ForeignKey('users.id'))
+    book_id = Column(UUID, ForeignKey('books.id'))
     quantity = Column(Integer)
     order_date = Column(String)
     order_amount = Column(Numeric(10, 2))
@@ -125,9 +138,12 @@ class Order(Base):
 class WishList(Base):
     __tablename__ = 'wish_list'
 
-    id = Column(Integer, primary_key=True, autoincrement=True)
-    user_id = Column(Integer, ForeignKey('users.id'))
-    book_id = Column(Integer, ForeignKey('books.id'))
+    # id = Column(Integer, primary_key=True, autoincrement=True)
+    # user_id = Column(Integer, ForeignKey('users.id'))
+    # book_id = Column(Integer, ForeignKey('books.id'))
+    id = Column(UUID, primary_key=True)
+    user_id = Column(UUID, ForeignKey('users.id'))
+    book_id = Column(UUID, ForeignKey('books.id'))
     
     # Relations
     user = relationship('User', back_populates='wish_list')
