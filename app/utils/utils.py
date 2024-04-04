@@ -29,6 +29,7 @@ def add_initial_user_data(User, db, users_data):
     ph = PasswordHasher()
     for user in users_data:
         new_user = User(
+            id=user['user_id'],
             user_name=user['user_name'],
             password=ph.hash(user['password']),
             email=user['email'],
@@ -44,7 +45,7 @@ def add_initial_author_data(Author, db, authors_data):
     print('Creating initial author data.')
     for author in authors_data:
         new_author = Author(
-            # id=uuid.uuid4(),
+            id=author['id'],
             author_first_name=author['author_first_name'],
             author_last_name=author['author_last_name']
         )
@@ -56,6 +57,7 @@ def add_initial_book_data(Book, db, books_data):
     print('Creating initial book data.')
     for book in books_data:
         new_book = Book(
+            id=book['book_id'],
             book_title=book['book_title'],
             page_count=book['page_count'],
             publish_date=book['publish_date'],
@@ -118,6 +120,7 @@ def add_initial_order_data(Order, db, orders_data):
     print('Creating initial order data.')
     for order in orders_data:
         new_order = Order(
+            # id=order['order_id'],
             order_id=order['order_id'],
             user_id=order['user_id'],
             book_id=order['book_id'],
