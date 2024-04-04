@@ -132,6 +132,7 @@ class CartObject(ObjectType):
         return root.user
     
 class OrderObject(ObjectType):
+    # order_id = UUID()
     order_id = UUID()
     user_id = UUID()
     book_id = UUID()
