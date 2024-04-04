@@ -5,6 +5,7 @@ from sqlalchemy import Numeric
 
 
 class UserObject(ObjectType):
+    id = UUID()
     user_name = String()
     password = String()
     email = String()
@@ -28,7 +29,7 @@ class UserObject(ObjectType):
         return root.orders
 
 class AuthorObject(ObjectType):
-    # id = UUID()
+    id = UUID()
     author_first_name = String()
     author_last_name = String()
     books = List(lambda: BookObject)
@@ -45,6 +46,7 @@ class AuthorObject(ObjectType):
 
 
 class BookObject(ObjectType):
+    id = UUID()
     book_title = String()
     page_count = Int()
     publish_date = String()
@@ -130,9 +132,9 @@ class CartObject(ObjectType):
         return root.user
     
 class OrderObject(ObjectType):
-    order_id = String()
-    user_id = Int()
-    book_id = Int()
+    order_id = UUID()
+    user_id = UUID()
+    book_id = UUID()
     quantity = Int()
     order_date = String()
     order_amount = Float()
