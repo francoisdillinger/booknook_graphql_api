@@ -7,7 +7,8 @@ Base = declarative_base()
 class User(Base):
     __tablename__ = 'users'
 
-    id = Column(Integer, primary_key=True, autoincrement=True)
+    # id = Column(Integer, primary_key=True, autoincrement=True)
+    id = Column(UUID, primary_key=True, autoincrement=True)
     user_name = Column(String)
     # -----------------------------------------------------------------------------------------------------
     # Might want to change this to hashed_password
@@ -27,8 +28,8 @@ class User(Base):
 class Author(Base):
     __tablename__ = 'authors'
 
-    # id = Column(UUID, primary_key=True)
-    id = Column(Integer, primary_key=True)
+    id = Column(UUID, primary_key=True)
+    # id = Column(Integer, primary_key=True)
     author_first_name = Column(String)
     author_last_name = Column(String)
 
@@ -38,7 +39,8 @@ class Author(Base):
 class Book(Base):
     __tablename__ = 'books'
     
-    id = Column(Integer, primary_key=True, autoincrement=True)
+    # id = Column(Integer, primary_key=True, autoincrement=True)
+    id = Column(UUID, primary_key=True, autoincrement=True)
     book_title = Column(String)
     page_count = Column(Integer)
     publish_date = Column(String)
@@ -60,7 +62,8 @@ class Book(Base):
 class Review(Base):
     __tablename__ = 'reviews'
 
-    id = Column(Integer, primary_key=True, autoincrement=True)
+    # id = Column(Integer, primary_key=True, autoincrement=True)
+    id = Column(UUID, primary_key=True, autoincrement=True)
     user_id = Column(Integer, ForeignKey('users.id'))
     book_id = Column(Integer, ForeignKey('books.id'))
     rating = Column(Integer)
@@ -106,7 +109,8 @@ class Cart(Base):
 class Order(Base):
     __tablename__ = 'orders'
 
-    id = Column(Integer, primary_key=True, autoincrement=True)
+    # id = Column(Integer, primary_key=True, autoincrement=True)
+    id = Column(UUID, primary_key=True, autoincrement=True)
     order_id = Column(String)
     user_id = Column(Integer, ForeignKey('users.id'))
     book_id = Column(Integer, ForeignKey('books.id'))
