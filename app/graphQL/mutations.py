@@ -33,6 +33,8 @@ from app.utils.utils import hash_password, admin_user_required
 
 class AddUser(Mutation):
     class Arguments:
+        # user_id = UUID(required=True)
+        id = Int(required=True)
         user_name = String(required=True)
         password = String(required=True)
         email = String(required=True)
@@ -64,7 +66,8 @@ class AddUser(Mutation):
 
 class UpdateUser(Mutation):
     class Arguments:
-        user_id = Int(required=True)
+        # user_id = Int(required=True)
+        id = Int(required=True)
         user_name = String()
         password = String()
         email = String()
@@ -73,7 +76,7 @@ class UpdateUser(Mutation):
         role = String()
     
     user = Field(lambda: UserObject)
-
+# You need to change user_id to id 
     def mutate(root, info, user_id, user_name=None, password=None, email=None, first_name=None, last_name=None, role=None):
         user = db.session.query(User).filter(User.id == user_id).first()
 
@@ -101,6 +104,7 @@ class UpdateUser(Mutation):
 class DeleteUser(Mutation):
     class Arguments:
         user_id = Int(required=True)
+        # id = Int(required=True)
     
     user = Field(lambda: UserObject)
 
@@ -118,7 +122,7 @@ class DeleteUser(Mutation):
 
 class AddAuthor(Mutation):
     class Arguments:
-        # id = UUID(required=True)
+        id = UUID(required=True)
         author_first_name = String(required=True)
         author_last_name = String(required=True)
     
@@ -138,7 +142,8 @@ class AddAuthor(Mutation):
 
 class UpdateAuthor(Mutation):
     class Arguments:
-        author_id = Int(required=True)
+        # author_id = Int(required=True)
+        id = Int(required=True)
         author_first_name = String()
         author_last_name = String()
     
@@ -185,6 +190,7 @@ class DeleteAuthor(Mutation):
     
 class AddBook(Mutation):
     class Arguments:
+        id = Int(required=True)
         book_title = String(required=True)
         page_count = Int(required=True)
         publish_date = String(required=True)
@@ -462,7 +468,8 @@ class DeleteCart(Mutation):
 
 class AddOrder(Mutation):
     class Arguments:
-        order_id = String(required=True)
+        # order_id = String(required=True)
+        id = String(required=True)
         user_id = Int(required=True)
         book_id = Int(required=True)
         quantity = Int(required=True)
@@ -473,12 +480,13 @@ class AddOrder(Mutation):
 
     order = Field(lambda: OrderObject)
 
-    def mutate(root, info, user_id, book_id, quantity, order_date, order_id):
+    # def mutate(root, info, user_id, book_id, quantity, order_date, order_id):
+    def mutate(root, info, user_id, book_id, quantity, order_date, id):
         # book = db.session.query(Book).filter(Book.id == book_id).first() 
         # amount = book.price * quantity
-        print("Here is the order amount", amount)
+        # print("Here is the order amount", amount)
         order = Order(
-            order_id=order_id,
+            id=id,
             user_id=user_id,
             book_id=book_id,
             quantity=quantity,
