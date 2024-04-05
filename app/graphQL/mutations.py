@@ -629,7 +629,7 @@ class AddWishlist(Mutation):
 
 class DeleteWishlist(Mutation):
     class Arguments:
-        wishlist_id = Int(required=True)
+        wishlist_id = UUID(required=True)
     
     wishlist = Field(lambda: WishListObject)
 
