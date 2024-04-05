@@ -104,8 +104,8 @@ class UpdateUser(Mutation):
 
 class DeleteUser(Mutation):
     class Arguments:
-        user_id = Int(required=True)
-        # id = Int(required=True)
+        # user_id = Int(required=True)
+        id = UUID(required=True)
     
     user = Field(lambda: UserObject)
 
