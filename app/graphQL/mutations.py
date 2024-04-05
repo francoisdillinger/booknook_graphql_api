@@ -418,14 +418,16 @@ class DeleteBookCategories(Mutation):
 
 class AddCart(Mutation):
     class Arguments:
+        id = UUID(required=True)
         user_id = UUID(required=True)
         book_id = UUID(required=True)
         quantity = Int(required=True)
     
     cart = Field(lambda: CartObject)
 
-    def mutate(root, info, user_id, book_id, quantity):
+    def mutate(root, info,id, user_id, book_id, quantity):
         cart = Cart(
+            id=id,
             user_id=user_id,
             book_id=book_id,
             quantity=quantity
