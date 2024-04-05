@@ -75,6 +75,7 @@ def add_initial_review_data(Review, db, reviews_data):
     print('Creating initial review data.')
     for review in reviews_data:
         new_review = Review(
+            id=review['id'],
             user_id=review['user_id'],
             book_id=review['book_id'],
             rating=review['book_rating'],
