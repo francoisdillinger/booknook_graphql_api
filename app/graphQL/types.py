@@ -142,6 +142,7 @@ class OrderStatusEnum(Enum):
 
 class OrderObject(ObjectType):
     # order_id = UUID()
+    # This also has an 'id' for uniqueness but 'order_id' is a shared id by items of same order
     order_id = UUID()
     user_id = UUID()
     book_id = UUID()
