@@ -31,7 +31,7 @@ class User(Base):
 class Author(Base):
     __tablename__ = 'authors'
 
-    id = Column(UUID, primary_key=True)
+    id = Column(UUID(as_uuid=True), primary_key=True)
     # id = Column(Integer, primary_key=True)
     author_first_name = Column(String)
     author_last_name = Column(String)
