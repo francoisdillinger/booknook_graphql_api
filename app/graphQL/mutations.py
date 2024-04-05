@@ -473,6 +473,7 @@ class AddOrder(Mutation):
         # id = String(required=True)
         # user_id = Int(required=True)
         # book_id = Int(required=True)
+        order_id = UUID(required=True)
         user_id = UUID(required=True)
         book_id = UUID(required=True)
         quantity = Int(required=True)
@@ -485,12 +486,13 @@ class AddOrder(Mutation):
     order = Field(lambda: OrderObject)
 
     # def mutate(root, info, user_id, book_id, quantity, order_date, order_id):
-    def mutate(root, info, user_id, book_id, quantity, order_date, id, order_status):
+    def mutate(root, info, order_id, user_id, book_id, quantity, order_date, id, order_status):
         # book = db.session.query(Book).filter(Book.id == book_id).first() 
         # amount = book.price * quantity
         # print("Here is the order amount", amount)
         order = Order(
             id=id,
+            order_id=order_id,
             user_id=user_id,
             book_id=book_id,
             quantity=quantity,
@@ -503,6 +505,23 @@ class AddOrder(Mutation):
         db.session.refresh(order)
         return AddOrder(order=order)
 
+class UpdateOrder(Mutation):
+    class Arguments:
+        cart_id = Int(required=True)
+        quantity = Int(required=True)
+    
+    cart = Field(lambda: CartObject)
+
+    def mutate(root, info, cart_id, quantity):
+        cart = db.session.query(Cart).filter(Cart.id == cart_id).first()
+
+        if not cart:
+            raise GraphQLError(f'Cart item with id {cart_id} does not exist.')
+        
+        cart.quantity = quantity
+        db.session.commit()
+        db.session.refresh(cart)
+        return UpdateCart(cart=cart)
 
 class AddReview(Mutation):
     class Arguments:
