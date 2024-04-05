@@ -1,3 +1,27 @@
+book_category_data = [
+      {"book_id": "94214347-e2c1-4fa4-872f-2b02dfaccfef", "category_id": "cc1e08ca-c451-4966-86fd-666f79269d47"},
+  {"book_id": "94214347-e2c1-4fa4-872f-2b02dfaccfef", "category_id": "d33b0adf-159c-48ed-9a71-e228fa081d85"},
+  {"book_id": "94214347-e2c1-4fa4-872f-2b02dfaccfef", "category_id": "19adb8f7-0a61-4f62-9adf-037aa94464f3"},
+  {"book_id": "4e693a90-d582-421b-afbf-a4babf10a68e", "category_id": "b29b8a25-3ddb-4c27-82c6-92cb4f92fb10"},
+  {"book_id": "4e693a90-d582-421b-afbf-a4babf10a68e", "category_id": "3e23ca27-c8dd-400f-b1e9-028e73c02f2f"},
+  {"book_id": "4e693a90-d582-421b-afbf-a4babf10a68e", "category_id": "3c152f62-90c3-4f40-b114-89c341b5d4af"},
+  {"book_id": "4e693a90-d582-421b-afbf-a4babf10a68e", "category_id": "22e71008-3e9e-477e-9486-088bef23cf67"},
+  {"book_id": "5868f357-1e51-4383-a603-b21dd5881b18", "category_id": "a80057f9-84ce-42fd-97b6-8989b0b79ac3"},
+  {"book_id": "5868f357-1e51-4383-a603-b21dd5881b18", "category_id": "0f32d076-b6a1-40d7-9a19-16b148b5bd31"},
+  {"book_id": "5868f357-1e51-4383-a603-b21dd5881b18", "category_id": "86c6d8ec-6660-49ba-bbb5-e780e0e339a6"},
+  {"book_id": "cb16b8cd-82b2-4489-9a7f-7e085051a001", "category_id": "b3e1a5b1-fd1a-4ed4-8b7f-71166ca70efc"},
+  {"book_id": "cb16b8cd-82b2-4489-9a7f-7e085051a001", "category_id": "22e71008-3e9e-477e-9486-088bef23cf67"},
+  {"book_id": "81b45f95-dd8b-40b9-a4ef-3754963d5f7a", "category_id": "3e23ca27-c8dd-400f-b1e9-028e73c02f2f"},
+  {"book_id": "81b45f95-dd8b-40b9-a4ef-3754963d5f7a", "category_id": "b26bc5aa-70f4-416b-9b8f-c0d0cb98d6eb"},
+  {"book_id": "81b45f95-dd8b-40b9-a4ef-3754963d5f7a", "category_id": "3c152f62-90c3-4f40-b114-89c341b5d4af"},
+  {"book_id": "6e515ee5-0529-4013-ad25-5c3c5f4d79b1", "category_id": "cc1e08ca-c451-4966-86fd-666f79269d47"},
+  {"book_id": "6e515ee5-0529-4013-ad25-5c3c5f4d79b1", "category_id": "d33b0adf-159c-48ed-9a71-e228fa081d85"},
+  {"book_id": "efdd1fbe-91bb-4e26-9709-30c863b41cec", "category_id": "b29b8a25-3ddb-4c27-82c6-92cb4f92fb10"},
+  {"book_id": "efdd1fbe-91bb-4e26-9709-30c863b41cec", "category_id": "3e23ca27-c8dd-400f-b1e9-028e73c02f2f"},
+]
+
+
+
 # book_category_data = [
 #     {"book_id": 1, "category_id": 1},
 #     {"book_id": 1, "category_id": 2},
