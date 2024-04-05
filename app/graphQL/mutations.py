@@ -568,7 +568,7 @@ class UpdateReview(Mutation):
     class Arguments:
         # This is the id of the review, not the user or book id
         # Had to change due to issues with testing: review_id vs id
-        id = Int(required=True)
+        id = UUID(required=True)
         rating = Int()
         review = String()
     
