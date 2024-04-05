@@ -1,8 +1,11 @@
 from sqlalchemy.orm import declarative_base
 from sqlalchemy import UUID, Column, Integer, Numeric, String, ForeignKey
 from sqlalchemy.orm import relationship
+from sqlalchemy.dialects.postgresql import ENUM
 
 Base = declarative_base()
+
+order_status_enum = ENUM('Processing', 'Shipped', 'Delivered', name='order_status_enum', metadata=Base.metadata)
 
 class User(Base):
     __tablename__ = 'users'
