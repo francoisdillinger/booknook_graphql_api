@@ -80,6 +80,7 @@ class BookObject(ObjectType):
         return root.book_orders
     
 class ReviewObject(ObjectType):
+    id = UUID()
     user = Field(lambda: UserObject)
     rating = Int()
     review = String()
