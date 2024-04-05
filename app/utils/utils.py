@@ -100,6 +100,7 @@ def add_initial_book_categories_data(BookCategories, db, book_categories_data):
     print('Creating initial book categories data.')
     for book_category in book_categories_data:
         new_book_category = BookCategories(
+            id=book_category['id'],
             book_id=book_category['book_id'],
             category_id=book_category['category_id']
         )
