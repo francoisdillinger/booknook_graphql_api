@@ -469,9 +469,11 @@ class DeleteCart(Mutation):
 class AddOrder(Mutation):
     class Arguments:
         # order_id = String(required=True)
-        id = String(required=True)
-        user_id = Int(required=True)
-        book_id = Int(required=True)
+        # id = String(required=True)
+        # user_id = Int(required=True)
+        # book_id = Int(required=True)
+        user_id = UUID(required=True)
+        book_id = UUID(required=True)
         quantity = Int(required=True)
         order_date = String(required=True)
         order_amount = Int(required=True)
