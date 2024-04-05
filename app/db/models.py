@@ -133,6 +133,7 @@ class Order(Base):
     quantity = Column(Integer)
     order_date = Column(String)
     order_amount = Column(Numeric(10, 2))
+    orderStatus = Column(order_status_enum)
     
     # Relations
     user = relationship('User', back_populates='orders')
