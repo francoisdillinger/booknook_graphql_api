@@ -144,7 +144,7 @@ class OrderObject(ObjectType):
     quantity = Int()
     order_date = String()
     order_amount = Float()
-    orderStatus = Field(OrderStatusEnum)
+    order_status = Field(OrderStatusEnum)
 
     book = Field(lambda: BookObject)
     user = Field(lambda: UserObject)
