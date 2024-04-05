@@ -593,7 +593,7 @@ class UpdateReview(Mutation):
 
 class DeleteReview(Mutation):
     class Arguments:
-        review_id = Int(required=True)
+        review_id = UUID(required=True)
     
     review = Field(lambda: ReviewObject)
 
