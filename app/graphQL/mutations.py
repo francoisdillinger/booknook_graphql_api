@@ -110,11 +110,11 @@ class DeleteUser(Mutation):
     user = Field(lambda: UserObject)
 
     @admin_user_required
-    def mutate(root, info, user_id):
-        user = db.session.query(User).filter(User.id == user_id).first()
+    def mutate(root, info, id):
+        user = db.session.query(User).filter(User.id == id).first()
 
         if not user:
-            raise GraphQLError(f'User with id {user_id} not found.')
+            raise GraphQLError(f'User with id {id} not found.')
 
         db.session.delete(user)
         db.session.commit()
