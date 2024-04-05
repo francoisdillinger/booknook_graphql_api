@@ -329,8 +329,8 @@ class UpdateCategory(Mutation):
 
 class AddBookCategory(Mutation):
     class Arguments:
-        book_id = Int(required=True)
-        category_id = Int(required=True)
+        book_id = UUID(required=True)
+        category_id = UUID(required=True)
     
     book_category = Field(lambda: BookCategoriesObject)
 
