@@ -163,6 +163,7 @@ class OrderObject(ObjectType):
         return root.user
     
 class WishListObject(ObjectType):
+    id = UUID()
     user_id = Int()
     book_id = Int()
     book = Field(lambda: BookObject)
