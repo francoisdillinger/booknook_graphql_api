@@ -89,6 +89,7 @@ def add_initial_category_data(Category, db, categories_data):
     print('Creating initial category data.')
     for category in categories_data:
         new_category = Category(
+            id=category['id'],
             category_name=category['category']
         )
         db.session.add(new_category)
