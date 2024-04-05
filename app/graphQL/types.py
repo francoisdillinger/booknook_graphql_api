@@ -1,4 +1,4 @@
-from graphene import UUID, Float, ObjectType, String, Int, List, Field
+from graphene import UUID, Float, ObjectType, String, Int, List, Field, Enum
 from sqlalchemy import Numeric
 # from app.db.database import db
 # from app.db.models import User, Author, Book
@@ -131,6 +131,11 @@ class CartObject(ObjectType):
     def resolve_user(root, info):
         return root.user
     
+class OrderStatusEnum(Enum):
+    PROCESSING = 'Processing'
+    SHIPPED = 'Shipped'
+    DELIVERED = 'Delivered'
+
 class OrderObject(ObjectType):
     # order_id = UUID()
     order_id = UUID()
@@ -139,6 +144,7 @@ class OrderObject(ObjectType):
     quantity = Int()
     order_date = String()
     order_amount = Float()
+    orderStatus = Field(OrderStatusEnum)
 
     book = Field(lambda: BookObject)
     user = Field(lambda: UserObject)
