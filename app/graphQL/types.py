@@ -120,6 +120,7 @@ class BookCategoriesObject(ObjectType):
         return root.category
     
 class CartObject(ObjectType):
+    id = UUID()
     user_id = Int()
     book_id = Int()
     quantity = Int()
