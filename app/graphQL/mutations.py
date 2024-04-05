@@ -507,21 +507,21 @@ class AddOrder(Mutation):
 
 class UpdateOrder(Mutation):
     class Arguments:
-        cart_id = Int(required=True)
-        quantity = Int(required=True)
+        order_id = UUID(required=True)
+        order_status = OrderStatusEnum(required=True)
     
     cart = Field(lambda: CartObject)
 
-    def mutate(root, info, cart_id, quantity):
-        cart = db.session.query(Cart).filter(Cart.id == cart_id).first()
+    def mutate(root, info, order_id, order_status):
+        order = db.session.query(Order).filter(Order.order_id == order_id).all()
 
-        if not cart:
-            raise GraphQLError(f'Cart item with id {cart_id} does not exist.')
+        if not order:
+            raise GraphQLError(f'Order items with id {order_id} does not exist.')
         
-        cart.quantity = quantity
+        order.order_status = order_status
         db.session.commit()
-        db.session.refresh(cart)
-        return UpdateCart(cart=cart)
+        db.session.refresh(order)
+        return UpdateOrder(order=order)
 
 class AddReview(Mutation):
     class Arguments:
