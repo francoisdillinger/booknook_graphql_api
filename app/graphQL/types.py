@@ -28,6 +28,7 @@ class UserObject(ObjectType):
     def resolve_orders(root, info):
         return root.orders
 
+
 class AuthorObject(ObjectType):
     id = UUID()
     author_first_name = String()
@@ -79,6 +80,7 @@ class BookObject(ObjectType):
     def resolve_book_orders(root, info):
         return root.book_orders
     
+
 class ReviewObject(ObjectType):
     id = UUID()
     user = Field(lambda: UserObject)
@@ -104,6 +106,7 @@ class CategoryObject(ObjectType):
     def resolve_books(root, info):
         return root.books
 
+
 class BookCategoriesObject(ObjectType):
     id = UUID()
     book_id = Int()
@@ -119,6 +122,7 @@ class BookCategoriesObject(ObjectType):
     def resolve_category(root, info):
         return root.category
     
+
 class CartObject(ObjectType):
     id = UUID()
     user_id = Int()
@@ -135,10 +139,12 @@ class CartObject(ObjectType):
     def resolve_user(root, info):
         return root.user
     
+
 class OrderStatusEnum(Enum):
     PROCESSING = 'Processing'
     SHIPPED = 'Shipped'
     DELIVERED = 'Delivered'
+
 
 class OrderObject(ObjectType):
     # order_id = UUID()
@@ -161,6 +167,7 @@ class OrderObject(ObjectType):
     # Field-level Resolver
     def resolve_user(root, info):
         return root.user
+   
     
 class WishListObject(ObjectType):
     id = UUID()
