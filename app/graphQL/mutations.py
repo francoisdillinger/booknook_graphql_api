@@ -389,7 +389,7 @@ class AddBookCategory(Mutation):
 
 class DeleteBookCategories(Mutation):
     class Arguments:
-        book_id = Int(required=True)
+        book_id = UUID(required=True)
     
     book_category = Field(lambda: BookCategoriesObject)
 
