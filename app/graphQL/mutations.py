@@ -513,15 +513,20 @@ class UpdateOrder(Mutation):
     order = Field(lambda: OrderObject)
 
     def mutate(root, info, order_id, order_status):
-        order = db.session.query(Order).filter(Order.order_id == order_id).all()
+        # Fetch all orders with the matching order_id
+        orders = db.session.query(Order).filter(Order.order_id == order_id).all()
 
-        if not order:
-            raise GraphQLError(f'Order items with id {order_id} does not exist.')
-        
-        order.order_status = order_status
+        if not orders:
+            raise GraphQLError(f'No order items with id {order_id} exist.')
+
+        # Update order_status for all fetched orders
+        for order in orders:
+            order.order_status = order_status
         db.session.commit()
-        db.session.refresh(order)
-        return UpdateOrder(order=order)
+
+        # This assumes you want to return just one of the updated orders in the response for simplicity
+        # Adjust as needed, possibly to return a list or a count of updated orders
+        return UpdateOrder(order=orders[0])
 
 class AddReview(Mutation):
     class Arguments:
