@@ -12,7 +12,8 @@ from app.graphQL.types import (
     CartObject, 
     OrderObject, 
     ReviewObject,
-    WishListObject
+    WishListObject,
+    OrderStatusEnum
     )
 from app.db.models import (
     User, 
