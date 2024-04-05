@@ -96,9 +96,9 @@ class BookCategories(Base):
     # book_id = Column(Integer, ForeignKey('books.id'))
     # category_id = Column(Integer, ForeignKey('categories.id'))
 
-    id = Column(UUID, primary_key=True)
-    book_id = Column(UUID, ForeignKey('books.id'))
-    category_id = Column(UUID, ForeignKey('categories.id'))
+    id = Column(UUID(as_uuid=True), primary_key=True)
+    book_id = Column(UUID(as_uuid=True), ForeignKey('books.id'))
+    category_id = Column(UUID(as_uuid=True), ForeignKey('categories.id'))
     
     # Relations
     book = relationship('Book', back_populates='book_categories')
