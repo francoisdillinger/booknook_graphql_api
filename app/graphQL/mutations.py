@@ -611,8 +611,8 @@ class DeleteReview(Mutation):
 
 class AddWishlist(Mutation):
     class Arguments:
-        user_id = Int(required=True)
-        book_id = Int(required=True)
+        user_id = UUID(required=True)
+        book_id = UUID(required=True)
     
     wishlist = Field(lambda: WishListObject)
 
