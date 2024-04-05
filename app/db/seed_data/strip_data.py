@@ -5,7 +5,7 @@ def strip_books_data(books_data):
     for book in books_data:
         stripped_book = {
             'book_title': book['book_title'],
-            'price': book['price'],
+            # 'price': book['price'],
             # 'description': book['description'],
             'book_id': book['book_id']
         }
