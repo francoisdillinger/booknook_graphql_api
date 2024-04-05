@@ -130,8 +130,9 @@ class AddAuthor(Mutation):
     author = Field(lambda: AuthorObject)
 
     @admin_user_required
-    def mutate(root, info, author_first_name, author_last_name):
+    def mutate(root, info,id, author_first_name, author_last_name):
         author = Author(
+            id=id,
             author_first_name=author_first_name,
             author_last_name=author_last_name
         )
