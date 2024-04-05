@@ -665,6 +665,7 @@ class Mutation(ObjectType):
     delete_cart = DeleteCart.Field()
 
     add_order = AddOrder.Field()
+    update_order = UpdateOrder.Field()
 
     add_review = AddReview.Field()
     update_review = UpdateReview.Field()
