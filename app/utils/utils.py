@@ -112,6 +112,7 @@ def add_initial_cart_data(Cart, db, carts_data):
     print('Creating initial cart data.')
     for cart in carts_data:
         new_cart = Cart(
+            id=cart['id'],
             user_id=cart['user_id'],
             book_id=cart['book_id'],
             quantity=cart['quantity']
