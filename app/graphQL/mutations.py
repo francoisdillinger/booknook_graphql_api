@@ -192,7 +192,7 @@ class DeleteAuthor(Mutation):
     
 class AddBook(Mutation):
     class Arguments:
-        id = Int(required=True)
+        id = UUID(required=True)
         book_title = String(required=True)
         page_count = Int(required=True)
         publish_date = String(required=True)
@@ -205,7 +205,7 @@ class AddBook(Mutation):
     book = Field(lambda: BookObject)
 
     @admin_user_required
-    def mutate(root, info, book_title, page_count, publish_date, price, description, inventory_count, isbn, author_id):
+    def mutate(root, info,id, book_title, page_count, publish_date, price, description, inventory_count, isbn, author_id):
         try:
             author = db.session.query(Author).filter(Author.id == author_id).one()
         except NoResultFound:
@@ -213,6 +213,7 @@ class AddBook(Mutation):
             raise GraphQLError('The provided author_id does not exist')
         
         book = Book(
+            id=id,
             book_title=book_title,
             page_count=page_count,
             publish_date=publish_date,
