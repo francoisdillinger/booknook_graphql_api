@@ -68,7 +68,7 @@ class AddUser(Mutation):
 class UpdateUser(Mutation):
     class Arguments:
         # user_id = Int(required=True)
-        id = Int(required=True)
+        id = UUID(required=True)
         user_name = String()
         password = String()
         email = String()
