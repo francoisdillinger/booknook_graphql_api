@@ -536,6 +536,7 @@ class UpdateOrder(Mutation):
 
 class AddReview(Mutation):
     class Arguments:
+        id = UUID(required=True)
         user_id = UUID(required=True)
         book_id = UUID(required=True)
         rating = Int(required=True)
@@ -543,7 +544,7 @@ class AddReview(Mutation):
     
     review = Field(lambda: ReviewObject)
 
-    def mutate(root, info, user_id, book_id, rating, review):
+    def mutate(root, info,id, user_id, book_id, rating, review):
         user = db.session.query(User).filter(User.id == user_id).first()
         book = db.session.query(Book).filter(Book.id == book_id).first()
 
@@ -555,6 +556,7 @@ class AddReview(Mutation):
             raise GraphQLError(f'Rating must be between 1 and 5.')
         
         review = Review(
+            id=id,
             user_id=user_id,
             book_id=book_id,
             rating=rating,
