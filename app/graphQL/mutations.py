@@ -290,13 +290,15 @@ class DeleteBook(Mutation):
 
 class AddCategory(Mutation):
     class Arguments:
+        id=UUID(required=True)
         category_name = String(required=True)
     
     category = Field(lambda: CategoryObject)
 
     @admin_user_required
-    def mutate(root, info, category_name):
+    def mutate(root, info,id, category_name):
         category = Categories(
+            id=id,
             category_name=category_name
         )
         db.session.add(category)
