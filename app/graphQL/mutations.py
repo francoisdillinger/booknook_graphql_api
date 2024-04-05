@@ -509,6 +509,7 @@ class AddOrder(Mutation):
         db.session.refresh(order)
         return AddOrder(order=order)
 
+
 class UpdateOrder(Mutation):
     class Arguments:
         order_id = UUID(required=True)
@@ -531,6 +532,7 @@ class UpdateOrder(Mutation):
         # This assumes you want to return just one of the updated orders in the response for simplicity
         # Adjust as needed, possibly to return a list or a count of updated orders
         return UpdateOrder(order=orders[0])
+
 
 class AddReview(Mutation):
     class Arguments:
