@@ -105,6 +105,7 @@ class CategoryObject(ObjectType):
         return root.books
 
 class BookCategoriesObject(ObjectType):
+    id = UUID()
     book_id = Int()
     category_id = Int()
     book = Field(lambda: BookObject)
