@@ -127,9 +127,9 @@ class Order(Base):
     # book_id = Column(Integer, ForeignKey('books.id'))
 
     # id = Column(UUID)
-    order_id = Column(UUID)
-    user_id = Column(UUID, ForeignKey('users.id'))
-    book_id = Column(UUID, ForeignKey('books.id'))
+    order_id = Column(UUID(as_uuid=True))
+    user_id = Column(UUID(as_uuid=True), ForeignKey('users.id'))
+    book_id = Column(UUID(as_uuid=True), ForeignKey('books.id'))
     quantity = Column(Integer)
     order_date = Column(String)
     order_amount = Column(Numeric(10, 2))
