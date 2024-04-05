@@ -416,8 +416,8 @@ class DeleteBookCategories(Mutation):
 
 class AddCart(Mutation):
     class Arguments:
-        user_id = Int(required=True)
-        book_id = Int(required=True)
+        user_id = UUID(required=True)
+        book_id = UUID(required=True)
         quantity = Int(required=True)
     
     cart = Field(lambda: CartObject)
