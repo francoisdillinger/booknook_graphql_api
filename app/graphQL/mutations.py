@@ -510,7 +510,7 @@ class UpdateOrder(Mutation):
         order_id = UUID(required=True)
         order_status = OrderStatusEnum(required=True)
     
-    cart = Field(lambda: CartObject)
+    order = Field(lambda: OrderObject)
 
     def mutate(root, info, order_id, order_status):
         order = db.session.query(Order).filter(Order.order_id == order_id).all()
