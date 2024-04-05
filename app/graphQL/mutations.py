@@ -145,23 +145,23 @@ class AddAuthor(Mutation):
 class UpdateAuthor(Mutation):
     class Arguments:
         # author_id = Int(required=True)
-        id = Int(required=True)
+        id = UUID(required=True)
         author_first_name = String()
         author_last_name = String()
     
     author = Field(lambda: AuthorObject)
 
     @admin_user_required
-    def mutate(root, info, author_id, author_first_name=None, author_last_name=None):
+    def mutate(root, info, id, author_first_name=None, author_last_name=None):
         # This is how you would do it if the session is being closed prematurely. I removed explicit closing of 
         # the session in mutations because it was causing issues and flask_sqlalchemy handles it for us.
-        # author = db.session.query(Author).options(joinedload(Author.books)).filter(Author.id == author_id).first()
+        # author = db.session.query(Author).options(joinedload(Author.books)).filter(Author.id == id).first()
 
         
-        author = db.session.query(Author).filter(Author.id == author_id).first()
+        author = db.session.query(Author).filter(Author.id == id).first()
 
         if not author:
-            raise GraphQLError(f'Author with id {author_id} does not exist.')
+            raise GraphQLError(f'Author with id {id} does not exist.')
         if author_first_name is not None:
             author.author_first_name = author_first_name
         if author_last_name is not None:
@@ -174,16 +174,16 @@ class UpdateAuthor(Mutation):
 
 class DeleteAuthor(Mutation):
     class Arguments:
-        author_id = Int(required=True)
+        id = UUID(required=True)
     
     author = Field(lambda: AuthorObject)
 
     @admin_user_required
-    def mutate(root, info, author_id):
-        author = db.session.query(Author).filter(Author.id == author_id).first()
+    def mutate(root, info, id):
+        author = db.session.query(Author).filter(Author.id == id).first()
 
         if not author:
-            raise GraphQLError(f'Author with id {author_id} does not exist.')
+            raise GraphQLError(f'Author with id {id} does not exist.')
 
         db.session.delete(author)
         db.session.commit()
