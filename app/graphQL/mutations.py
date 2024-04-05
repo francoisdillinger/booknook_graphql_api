@@ -309,16 +309,16 @@ class AddCategory(Mutation):
 
 class UpdateCategory(Mutation):
     class Arguments:
-        category_id = Int(required=True)
+        id = UUID(required=True)
         category_name = String()
     
     category = Field(lambda: CategoryObject)
 
-    def mutate(root, info, category_id, category_name=None):
-        category = db.session.query(Categories).filter(Categories.id == category_id).first()
+    def mutate(root, info, id, category_name=None):
+        category = db.session.query(Categories).filter(Categories.id == id).first()
 
         if not category:
-            raise GraphQLError(f'Category with id {category_id} does not exist.')
+            raise GraphQLError(f'Category with id {id} does not exist.')
         if category_name is not None:
             category.category_name = category_name
 
