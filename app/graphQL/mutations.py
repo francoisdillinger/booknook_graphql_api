@@ -329,13 +329,14 @@ class UpdateCategory(Mutation):
 
 class AddBookCategory(Mutation):
     class Arguments:
+        id = UUID(required=True)
         book_id = UUID(required=True)
         category_id = UUID(required=True)
     
     book_category = Field(lambda: BookCategoriesObject)
 
     @admin_user_required
-    def mutate(root, info, book_id, category_id):
+    def mutate(root, info,id, book_id, category_id):
         try:
             book = db.session.query(Book).filter(Book.id == book_id).one()
         except NoResultFound:
@@ -349,6 +350,7 @@ class AddBookCategory(Mutation):
             raise GraphQLError('The provided category_id does not exist')
         
         book_category = BookCategories(
+            id=id,
             book_id=book_id,
             category_id=category_id
         )
