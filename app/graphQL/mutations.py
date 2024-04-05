@@ -485,7 +485,7 @@ class AddOrder(Mutation):
     order = Field(lambda: OrderObject)
 
     # def mutate(root, info, user_id, book_id, quantity, order_date, order_id):
-    def mutate(root, info, user_id, book_id, quantity, order_date, id):
+    def mutate(root, info, user_id, book_id, quantity, order_date, id, order_status):
         # book = db.session.query(Book).filter(Book.id == book_id).first() 
         # amount = book.price * quantity
         # print("Here is the order amount", amount)
@@ -496,6 +496,7 @@ class AddOrder(Mutation):
             quantity=quantity,
             order_date=order_date,
             order_amount = quantity * 4.95,
+            order_status=order_status,
         )
         db.session.add(order)
         db.session.commit()
