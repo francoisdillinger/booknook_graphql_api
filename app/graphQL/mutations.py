@@ -35,7 +35,7 @@ from app.utils.utils import hash_password, admin_user_required
 class AddUser(Mutation):
     class Arguments:
         # user_id = UUID(required=True)
-        id = Int(required=True)
+        id = UUID(required=True)
         user_name = String(required=True)
         password = String(required=True)
         email = String(required=True)
