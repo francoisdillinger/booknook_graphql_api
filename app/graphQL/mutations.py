@@ -478,7 +478,7 @@ class AddOrder(Mutation):
         quantity = Int(required=True)
         order_date = String(required=True)
         order_amount = Int(required=True)
-        order_status = Enum(required=True)
+        order_status = OrderStatusEnum(required=True)
         # Come back and make sure you add a book price as we need to calculate the total price of the order
         # based on the current price of the book at the time or ordering since prices fluctuate in the real world.
 
