@@ -436,7 +436,7 @@ class AddCart(Mutation):
 
 class UpdateCart(Mutation):
     class Arguments:
-        cart_id = Int(required=True)
+        cart_id = UUID(required=True)
         quantity = Int(required=True)
     
     cart = Field(lambda: CartObject)
