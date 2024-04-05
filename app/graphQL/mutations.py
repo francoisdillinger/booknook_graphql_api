@@ -231,7 +231,7 @@ class AddBook(Mutation):
 
 class UpdateBook(Mutation):
     class Arguments:
-        book_id = Int(required=True)
+        id = UUID(required=True)
         book_title = String()
         page_count = Int()
         publish_date = String()
@@ -243,11 +243,11 @@ class UpdateBook(Mutation):
 
     book = Field(lambda: BookObject)
 
-    def mutate(root, info, book_id, book_title=None, page_count=None, publish_date=None, price=None, description=None, inventory_count=None, isbn=None, author_id=None):
-        book = db.session.query(Book).filter(Book.id == book_id).first()
+    def mutate(root, info, id, book_title=None, page_count=None, publish_date=None, price=None, description=None, inventory_count=None, isbn=None, author_id=None):
+        book = db.session.query(Book).filter(Book.id == id).first()
 
         if not book:
-            raise GraphQLError(f'Book with id {book_id} does not exist.')
+            raise GraphQLError(f'Book with id {id} does not exist.')
         if book_title is not None:
             book.book_title = book_title
         if page_count is not None:
@@ -272,16 +272,16 @@ class UpdateBook(Mutation):
 
 class DeleteBook(Mutation):
     class Arguments:
-        book_id = Int(required=True)
+        id = UUID(required=True)
     
     book = Field(lambda: BookObject)
 
     @admin_user_required
-    def mutate(root, info, book_id):
-        book = db.session.query(Book).filter(Book.id == book_id).first()
+    def mutate(root, info, id):
+        book = db.session.query(Book).filter(Book.id == id).first()
 
         if not book:
-            raise GraphQLError(f'Book with id {book_id} does not exist.')
+            raise GraphQLError(f'Book with id {id} does not exist.')
 
         db.session.delete(book)
         db.session.commit()
