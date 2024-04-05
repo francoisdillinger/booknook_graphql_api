@@ -534,8 +534,8 @@ class UpdateOrder(Mutation):
 
 class AddReview(Mutation):
     class Arguments:
-        user_id = Int(required=True)
-        book_id = Int(required=True)
+        user_id = UUID(required=True)
+        book_id = UUID(required=True)
         rating = Int(required=True)
         review = String(required=True)
     
