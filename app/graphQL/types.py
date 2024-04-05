@@ -96,6 +96,7 @@ class ReviewObject(ObjectType):
 
 
 class CategoryObject(ObjectType):
+    id = UUID()
     category_name = String()
     books = List(lambda: BookObject)
 
