@@ -50,8 +50,8 @@ def create_database(app):
             add_initial_author_data(Author, db, authors_data)
             add_initial_book_data(Book, db, books_data)
             # add_initial_review_data(Review, db, reviews_data)
-            # add_initial_category_data(Categories, db, category_data)
-            # add_initial_book_categories_data(BookCategories, db, book_category_data) 
+            add_initial_category_data(Categories, db, category_data)
+            add_initial_book_categories_data(BookCategories, db, book_category_data) 
             # add_initial_cart_data(Cart, db, cart_data)   
             add_initial_order_data(Order, db, orders_data)
 
