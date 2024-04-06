@@ -68,30 +68,30 @@ from users_data import users_data
 
 
 
-def add_category_id(book_category):
-    book_category["id"] = str(uuid.uuid4())
-    return book_category
+# def add_category_id(book_category):
+#     book_category["id"] = str(uuid.uuid4())
+#     return book_category
 
-def generate_python_code(book_categories_data):
-    python_code = "book_categories_data = [\n"
-    for book_category in book_categories_data:
-        python_code += "    " + str(book_category) + ",\n"
-    python_code += "]\n"
-    return python_code
+# def generate_python_code(book_categories_data):
+#     python_code = "book_categories_data = [\n"
+#     for book_category in book_categories_data:
+#         python_code += "    " + str(book_category) + ",\n"
+#     python_code += "]\n"
+#     return python_code
 
-def main():
-    # Assuming book_categories_data is a list of dictionaries from book_category_data.py
-    from book_category_data import book_category_data
+# def main():
+#     # Assuming book_categories_data is a list of dictionaries from book_category_data.py
+#     from book_category_data import book_category_data
     
-    # Add category_id to each book category
-    modified_book_categories_data = [add_category_id(book_category) for book_category in book_category_data]
+#     # Add category_id to each book category
+#     modified_book_categories_data = [add_category_id(book_category) for book_category in book_category_data]
     
-    # Generate Python code
-    python_code = generate_python_code(modified_book_categories_data)
+#     # Generate Python code
+#     python_code = generate_python_code(modified_book_categories_data)
     
-    # Write Python code to a new file
-    with open("modified_book_categories.py", "w") as file:
-        file.write(python_code)
+#     # Write Python code to a new file
+#     with open("modified_book_categories.py", "w") as file:
+#         file.write(python_code)
 
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     main()
