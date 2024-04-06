@@ -239,7 +239,7 @@ class UpdateBook(Mutation):
         description = String()
         inventory_count = Int()
         isbn = String()
-        author_id = Int()
+        author_id = UUID()
 
     book = Field(lambda: BookObject)
 
