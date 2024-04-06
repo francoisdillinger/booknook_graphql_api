@@ -86,6 +86,7 @@ class ReviewObject(ObjectType):
     user = Field(lambda: UserObject)
     rating = Int()
     review = String()
+    short_review = String()
     book = Field(lambda: BookObject)
 
     # Field-level Resolver
