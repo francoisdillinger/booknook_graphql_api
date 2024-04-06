@@ -606,15 +606,15 @@ class UpdateReview(Mutation):
 
 class DeleteReview(Mutation):
     class Arguments:
-        review_id = UUID(required=True)
+        id = UUID(required=True)
     
     review = Field(lambda: ReviewObject)
 
-    def mutate(root, info, review_id):
-        review = db.session.query(Review).filter(Review.id == review_id).first()
+    def mutate(root, info, id):
+        review = db.session.query(Review).filter(Review.id == id).first()
 
         if not review:
-            raise GraphQLError(f'Review with id {review_id} does not exist.')
+            raise GraphQLError(f'Review with id {id} does not exist.')
         
         db.session.delete(review)
         db.session.commit()
