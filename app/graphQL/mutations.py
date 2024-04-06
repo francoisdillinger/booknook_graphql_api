@@ -545,10 +545,11 @@ class AddReview(Mutation):
         book_id = UUID(required=True)
         rating = Int(required=True)
         review = String(required=True)
+        short_review = String(required=True)
     
     review = Field(lambda: ReviewObject)
 
-    def mutate(root, info,id, user_id, book_id, rating, review):
+    def mutate(root, info,id, user_id, book_id, rating, review, short_review):
         user = db.session.query(User).filter(User.id == user_id).first()
         book = db.session.query(Book).filter(Book.id == book_id).first()
 
@@ -564,7 +565,8 @@ class AddReview(Mutation):
             user_id=user_id,
             book_id=book_id,
             rating=rating,
-            review=review
+            review=review,
+            short_review=short_review
         )
         db.session.add(review)
         db.session.commit()
