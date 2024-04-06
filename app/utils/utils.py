@@ -121,6 +121,7 @@ def add_initial_cart_data(Cart, db, carts_data):
         db.session.add(new_cart)
         db.session.commit()
 
+
 def add_initial_order_data(Order, db, orders_data):
     print('Creating initial order data.')
     for order in orders_data:
