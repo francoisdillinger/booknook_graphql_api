@@ -73,6 +73,7 @@ class Review(Base):
     book_id = Column(UUID(as_uuid=True), ForeignKey('books.id'))
     rating = Column(Integer)
     review = Column(String)
+    short_review = Column(String)
     
     # Relations
     user = relationship('User', back_populates='reviews')
