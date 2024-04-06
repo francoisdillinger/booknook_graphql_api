@@ -109,8 +109,8 @@ class CategoryObject(ObjectType):
 
 class BookCategoriesObject(ObjectType):
     id = UUID()
-    book_id = Int()
-    category_id = Int()
+    book_id = UUID()
+    category_id = UUID()
     book = Field(lambda: BookObject)
     category = Field(lambda: CategoryObject)
 
