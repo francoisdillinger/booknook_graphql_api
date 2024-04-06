@@ -79,7 +79,8 @@ def add_initial_review_data(Review, db, reviews_data):
             user_id=review['user_id'],
             book_id=review['book_id'],
             rating=review['book_rating'],
-            review=review['book_review']
+            review=review['book_review'],
+            short_review=review['short_review'],
         )
         db.session.add(new_review)
         db.session.commit()
