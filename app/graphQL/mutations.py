@@ -624,13 +624,15 @@ class DeleteReview(Mutation):
 
 class AddWishlist(Mutation):
     class Arguments:
+        id = UUID(required=True)
         user_id = UUID(required=True)
         book_id = UUID(required=True)
     
     wishlist = Field(lambda: WishListObject)
 
-    def mutate(root, info, user_id, book_id):
+    def mutate(root, info,id, user_id, book_id):
         wishlist = WishList(
+            id=id,
             user_id=user_id,
             book_id=book_id
         )
