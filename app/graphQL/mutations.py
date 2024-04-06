@@ -581,10 +581,11 @@ class UpdateReview(Mutation):
         id = UUID(required=True)
         rating = Int()
         review = String()
+        short_review = String()
     
     review = Field(lambda: ReviewObject)
 
-    def mutate(root, info, id, rating=None, review=None):
+    def mutate(root, info, id, rating=None, review=None, short_review=None):
         review_instance = db.session.query(Review).filter(Review.id == id).first()
 
         if not review_instance:
@@ -595,6 +596,8 @@ class UpdateReview(Mutation):
             review_instance.rating = rating
         if review is not None:
             review_instance.review = review
+        if short_review is not None:
+            review_instance.short_review=short_review
 
         db.session.commit()
         db.session.refresh(review_instance)
