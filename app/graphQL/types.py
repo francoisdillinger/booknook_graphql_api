@@ -172,8 +172,8 @@ class OrderObject(ObjectType):
     
 class WishListObject(ObjectType):
     id = UUID()
-    user_id = Int()
-    book_id = Int()
+    user_id = UUID()
+    book_id = UUID()
     book = Field(lambda: BookObject)
     user = Field(lambda: UserObject)
 
