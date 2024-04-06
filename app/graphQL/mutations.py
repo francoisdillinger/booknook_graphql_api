@@ -440,16 +440,16 @@ class AddCart(Mutation):
 
 class UpdateCart(Mutation):
     class Arguments:
-        cart_id = UUID(required=True)
+        id = UUID(required=True)
         quantity = Int(required=True)
     
     cart = Field(lambda: CartObject)
 
-    def mutate(root, info, cart_id, quantity):
-        cart = db.session.query(Cart).filter(Cart.id == cart_id).first()
+    def mutate(root, info, id, quantity):
+        cart = db.session.query(Cart).filter(Cart.id == id).first()
 
         if not cart:
-            raise GraphQLError(f'Cart item with id {cart_id} does not exist.')
+            raise GraphQLError(f'Cart item with id {id} does not exist.')
         
         cart.quantity = quantity
         db.session.commit()
