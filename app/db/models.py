@@ -82,7 +82,6 @@ class Review(Base):
 class Categories(Base):
     __tablename__ = 'categories'
 
-    # id = Column(Integer, primary_key=True, autoincrement=True)
     id = Column(UUID(as_uuid=True), primary_key=True)
     category_name = Column(String)
     
@@ -92,7 +91,7 @@ class Categories(Base):
 
 class BookCategories(Base):
     __tablename__ = 'book_categories'
-    
+
     id = Column(UUID(as_uuid=True), primary_key=True)
     book_id = Column(UUID(as_uuid=True), ForeignKey('books.id'))
     category_id = Column(UUID(as_uuid=True), ForeignKey('categories.id'))
