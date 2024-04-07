@@ -1,5 +1,5 @@
 from graphene import UUID, Float, ObjectType, String, Int, List, Field, Enum
-from sqlalchemy import Numeric
+# from sqlalchemy import Numeric
 # from app.db.database import db
 # from app.db.models import User, Author, Book
 
