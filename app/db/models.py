@@ -10,7 +10,6 @@ order_status_enum = ENUM('Processing', 'Shipped', 'Delivered', name='order_statu
 class User(Base):
     __tablename__ = 'users'
 
-    # id = Column(Integer, primary_key=True, autoincrement=True)
     id = Column(UUID(as_uuid=True), primary_key=True)
     user_name = Column(String)
     # -----------------------------------------------------------------------------------------------------
