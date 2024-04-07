@@ -42,7 +42,6 @@ class Author(Base):
 class Book(Base):
     __tablename__ = 'books'
     
-    # id = Column(Integer, primary_key=True, autoincrement=True)
     id = Column(UUID(as_uuid=True), primary_key=True)
     book_title = Column(String)
     page_count = Column(Integer)
@@ -52,7 +51,6 @@ class Book(Base):
     inventory_count = Column(Integer)
     isbn = Column(String)
     author_id = Column(UUID(as_uuid=True), ForeignKey('authors.id'))
-    # author_id = Column(Integer, ForeignKey('authors.id'))
     
     # Relations
     author = relationship('Author', back_populates='books')
