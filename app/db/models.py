@@ -92,11 +92,7 @@ class Categories(Base):
 
 class BookCategories(Base):
     __tablename__ = 'book_categories'
-
-    # id = Column(Integer, primary_key=True, autoincrement=True)
-    # book_id = Column(Integer, ForeignKey('books.id'))
-    # category_id = Column(Integer, ForeignKey('categories.id'))
-
+    
     id = Column(UUID(as_uuid=True), primary_key=True)
     book_id = Column(UUID(as_uuid=True), ForeignKey('books.id'))
     category_id = Column(UUID(as_uuid=True), ForeignKey('categories.id'))
