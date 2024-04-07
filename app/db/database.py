@@ -54,10 +54,3 @@ def create_database(app):
             add_initial_book_categories_data(BookCategories, db, book_category_data) 
             # add_initial_cart_data(Cart, db, cart_data)   
             add_initial_order_data(Order, db, orders_data)
-
-
-
-
-# James, you need to add a UUID for the above commented out functions. 
-# Also, make sure to regenerate the dummy data needed for those functions 
-# to include UUIDs
