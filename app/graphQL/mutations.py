@@ -659,7 +659,7 @@ class DeleteWishlist(Mutation):
 
         return DeleteWishlist(wishlist=wishlist)
 
-# Make sure you go through and add the UUIDs to all mutations
+
 class Mutation(ObjectType):
     add_user = AddUser.Field()
     update_user = UpdateUser.Field()
