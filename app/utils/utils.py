@@ -1,6 +1,6 @@
 import os
 import jwt
-import uuid
+# import uuid
 from argon2 import PasswordHasher
 from graphql import GraphQLError
 from dotenv import load_dotenv
