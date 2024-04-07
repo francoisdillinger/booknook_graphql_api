@@ -122,12 +122,9 @@ class Cart(Base):
 
 class Order(Base):
     __tablename__ = 'orders'
+    
     # This also has an 'id' for uniqueness but 'order_id' is a shared id by items of same order
     id = Column(Integer, primary_key=True, autoincrement=True)
-    # user_id = Column(Integer, ForeignKey('users.id'))
-    # book_id = Column(Integer, ForeignKey('books.id'))
-
-    # id = Column(UUID)
     order_id = Column(UUID(as_uuid=True))
     user_id = Column(UUID(as_uuid=True), ForeignKey('users.id'))
     book_id = Column(UUID(as_uuid=True), ForeignKey('books.id'))
