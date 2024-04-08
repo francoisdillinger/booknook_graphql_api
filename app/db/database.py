@@ -17,7 +17,7 @@ from app.utils.utils import (
     add_initial_review_data, 
     add_initial_category_data, 
     add_initial_book_categories_data, 
-    add_initial_cart_data,
+    # add_initial_cart_data,
     add_initial_order_data
     )
 from app.db.models import (
@@ -42,7 +42,7 @@ def create_database(app):
             add_initial_review_data(Review, db, [])
             add_initial_category_data(Categories, db, [])
             add_initial_book_categories_data(BookCategories, db, [])
-            add_initial_cart_data(Cart, db, [])
+            # add_initial_cart_data(Cart, db, [])
             add_initial_order_data(Order, db, [])
         else:         
             prepare_database(Base, db)
