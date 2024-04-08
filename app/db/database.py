@@ -7,7 +7,7 @@ from app.db.seed_data.books_data import books_data
 from app.db.seed_data.book_reviews_data import reviews_data
 from app.db.seed_data.category_data import category_data
 from app.db.seed_data.book_category_data import book_category_data
-from app.db.seed_data.cart_data import cart_data
+# from app.db.seed_data.cart_data import cart_data
 from app.db.seed_data.orders_data import orders_data
 from app.utils.utils import (
     prepare_database,
