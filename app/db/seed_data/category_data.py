@@ -46,7 +46,7 @@ category_data = [
  {'id': 'ad515300-6bb3-4a5a-a824-8d305c27eb4e', 'category': 'Science Fiction'},
  {'id': 'f99920c2-7aaa-409f-a2c7-7e3ce9732ff2', 'category': 'Road Novel'},
  {'id': '626d4270-3963-4600-b238-ebdf09a98fa5', 'category': 'Postmodernism'},
- {'id': '632e2138-2e36-4f71-ad12-c0ec8af53057', 'category': 'Mythology'},
+#  {'id': '632e2138-2e36-4f71-ad12-c0ec8af53057', 'category': 'Mythology'},
  {'id': 'e6204fb6-3fe5-405e-ae43-afe63dab4a53', 'category': 'Allegorical'},
  {'id': 'a4b43ca5-0cb6-4897-a1dd-a9d536c3690c', 'category': 'Fantasy'},
  {'id': 'bb10de0b-7fa8-45e5-b4ca-5140d42f763b','category': 'Psychological Fiction'},
