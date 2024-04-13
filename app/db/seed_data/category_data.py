@@ -61,7 +61,7 @@ category_data = [
  {'id': '26c10b0e-b74e-4c65-8b18-b05ed7956aa6','category': 'Literary Realism'},
  {'id': 'b66e6ec0-db57-429b-80e9-df226f160dc6','category': 'Detective Fiction'},
  {'id': 'e0e83a8a-fb2b-4a42-9215-a8dbc0c56e41', 'category': 'War Fiction'},
- {'id': '892428a2-93a7-414c-8c7f-82e54b5c5232', 'category': 'Science Fiction'},
+#  {'id': '892428a2-93a7-414c-8c7f-82e54b5c5232', 'category': 'Science Fiction'},
  {'id': '4af74b91-3bc2-4beb-bc97-f968f9c8c6c4','category': 'Fantasy Adventure'},
  {'id': 'ac55bc1a-4c7d-4fc0-8479-d21ea4b08f21','category': 'Political Fiction'},
  {'id': 'afa9b7a5-63ae-49b0-acd2-5aadd33d97ee','category': 'Historical Fiction'},
