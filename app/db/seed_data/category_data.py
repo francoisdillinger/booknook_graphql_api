@@ -53,7 +53,7 @@ category_data = [
  {'id': '86c6d8ec-6660-49ba-bbb5-e780e0e339a6', 'category': 'War'},
  {'id': '5d2b00c5-969b-46c9-ad7e-fc855374b186', 'category': 'Classical'},
 #  {'id': '0603b016-ea33-48db-af7e-1781027d5670', 'category': 'Self-Help'},
- {'id': '96c5270f-8280-4931-b7e6-fb437c38e8a5','category': 'Literary Realism'},
+#  {'id': '96c5270f-8280-4931-b7e6-fb437c38e8a5','category': 'Literary Realism'},
  {'id': 'dc599642-4663-40be-b7f9-f3eeda47395e', 'category': 'Gothic'},
  {'id': 'b26bc5aa-70f4-416b-9b8f-c0d0cb98d6eb','category': 'Historical Romance'},
  {'id': '1c615f5b-ef7a-4f55-99ea-21e29679e5c8','category': 'Classical Literature'},
