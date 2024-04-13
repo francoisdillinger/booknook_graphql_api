@@ -26,7 +26,7 @@ category_data = [
  {'id': 'b34e53a8-09d0-4c67-8653-18679f151e7f', 'category': 'Realism'},
  {'id': '33a25bc1-0305-4f80-aa34-789b91c3cbff', 'category': 'Poetry'},
  {'id': '7f79b1d6-9203-417e-b4fe-ea1a4818d22a', 'category': 'Beat Generation'},
- {'id': 'd24a6831-a797-4b5f-bda5-80fd2ec75c7e','category': 'Detective Fiction'},
+#  {'id': 'd24a6831-a797-4b5f-bda5-80fd2ec75c7e','category': 'Detective Fiction'},
  {'id': 'c62d3629-98ce-431d-b231-fdd8f7b1a061','category': 'Post-Apocalyptic'},
  {'id': 'b3e1a5b1-fd1a-4ed4-8b7f-71166ca70efc', 'category': 'Modernist'},
  {'id': 'c9ae5264-390a-4471-aa04-c5e313befc41','category': 'Children’s Fantasy'},
