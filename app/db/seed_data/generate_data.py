@@ -10,19 +10,6 @@ llm = OpenAI(
     model='gpt-3.5-turbo-instruct'
 )
 
-# Generate text using the generate method
-# result = llm("Return a two paragraph description of the book Frankenstein. Make sure new paragraphs have a new line character. Return description in following json format: {'description': two paragraphs}")
-# print(result)
-
-
-# with open("long_description.py", "w") as file:
-#     file.write("random_orders = [\n")
-#     # for order in random_orders:
-#     file.write("    " + str(result) + ",\n")
-#     file.write("]\n")
-
-
-
 def generate_long_descriptions( books):
     new_books = []
     for book in books:
