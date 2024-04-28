@@ -6,9 +6,9 @@ import json
 load_dotenv()
 
 # Create an OpenAI object with the API key
-# llm = OpenAI(
-#     model='gpt-3.5-turbo-instruct'
-# )
+llm = OpenAI(
+    model='gpt-3.5-turbo-instruct'
+)
 
 # Generate text using the generate method
 # result = llm("Return a two paragraph description of the book Frankenstein. Make sure new paragraphs have a new line character. Return description in following json format: {'description': two paragraphs}")
@@ -26,12 +26,15 @@ load_dotenv()
 def generate_long_descriptions( books):
     new_books = []
     for book in books:
+        prompt = f'Imagine you are a literary critic and you are being hired to read books and write detailed descriptions in a manner that would interest new readers to read the book in question. I need you to return a two paragraph description of the book ${book["book_title"]}. Make sure new paragraphs have a new line character.'
+        result = llm(prompt)
         order = {
             'book_title':book['book_title'],
             'page_count':book['page_count'],
             'publish_date':book['publish_date'],
             'price':book['price'],
             'short_description':book['short_description'],
+            'long_description': result,
             'inventory_count':book['inventory_count'],
             'isbn': book['isbn'],
             'author_id':book['author_id'],
