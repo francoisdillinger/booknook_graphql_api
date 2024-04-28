@@ -1,12 +1,15 @@
 from langchain.llms import OpenAI
-import os
 from dotenv import load_dotenv
 
 load_dotenv()
 
+# Create an OpenAI object with the API key
 llm = OpenAI(
- openai_api_key=os.getenv('OPENAI_DATA_GENERATION_KEY')
+    model='gpt-3.5-turbo-instruct'
 )
 
-result = llm("Write a very shourt poem")
+# Generate text using the generate method
+result = llm("Write a very short poem")
 print(result)
+
+
