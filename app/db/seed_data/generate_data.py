@@ -1,4 +1,6 @@
-from langchain.llms import OpenAI
+# from langchain.llms import OpenAI
+from langchain_openai import ChatOpenAI
+from langchain_core.messages import HumanMessage, SystemMessage
 from dotenv import load_dotenv
 from books_data import books_data as books
 import json
@@ -6,28 +8,35 @@ import json
 load_dotenv()
 
 # Create an OpenAI object with the API key
-llm = OpenAI(
-    model='gpt-3.5-turbo-instruct'
-)
+chat = ChatOpenAI(model="gpt-4")
 
 def generate_long_descriptions( books):
+    count = 1
     new_books = []
     for book in books:
-        prompt = f'Imagine you are a literary critic and you are being hired to read books and write detailed descriptions in a manner that would interest new readers to read the book in question. I need you to return a two paragraph description of the book ${book["book_title"]}. Make sure new paragraphs have a new line character.'
-        result = llm(prompt)
+        systemPrompt = "You are an editor hired to read books and write detailed descriptions in a manner that would encourage new customers to purchase the book in question. You don't write reviews, you write synopses."
+        userPrompt = f'I need you to return a three paragraph synopsis of the book ${book["book_title"]}. Be Detailed!'
+
+        messages = [
+            SystemMessage(content=systemPrompt),
+            HumanMessage(content=userPrompt),
+        ]
+        response = chat.invoke(messages)
         order = {
             'book_title':book['book_title'],
             'page_count':book['page_count'],
             'publish_date':book['publish_date'],
             'price':book['price'],
             'short_description':book['short_description'],
-            'long_description': result,
+            'long_description': response.content,
             'inventory_count':book['inventory_count'],
             'isbn': book['isbn'],
             'author_id':book['author_id'],
             'book_id':book['book_id']
         }
         new_books.append(order)
+        count+=1
+        print(f'Book {count} finished.')
     return new_books
 
 books_with_long_descriptions = generate_long_descriptions(books)
