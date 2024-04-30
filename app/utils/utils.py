@@ -62,7 +62,8 @@ def add_initial_book_data(Book, db, books_data):
             page_count=book['page_count'],
             publish_date=book['publish_date'],
             price=book['price'],
-            description=book['description'],
+            short_description=book['short_description'],
+            long_description=book['long_description'],
             inventory_count=book['inventory_count'],
             isbn=book['isbn'],
             author_id=book['author_id']
