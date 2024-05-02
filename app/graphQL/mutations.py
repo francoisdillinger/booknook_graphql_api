@@ -197,7 +197,8 @@ class AddBook(Mutation):
         page_count = Int(required=True)
         publish_date = String(required=True)
         price = Int(required=True)
-        description = String(required=True)
+        short_description = String(required=True)
+        long_description = String(required=True)
         inventory_count = Int(required=True)
         isbn = String(required=True)
         author_id = UUID(required=True)
@@ -205,7 +206,7 @@ class AddBook(Mutation):
     book = Field(lambda: BookObject)
 
     @admin_user_required
-    def mutate(root, info,id, book_title, page_count, publish_date, price, description, inventory_count, isbn, author_id):
+    def mutate(root, info,id, book_title, page_count, publish_date, price, short_description, long_description, inventory_count, isbn, author_id):
         try:
             author = db.session.query(Author).filter(Author.id == author_id).one()
         except NoResultFound:
@@ -218,7 +219,8 @@ class AddBook(Mutation):
             page_count=page_count,
             publish_date=publish_date,
             price=price,
-            description=description,
+            short_description=short_description,
+            long_description=long_description,
             inventory_count=inventory_count,
             isbn=isbn,
             author_id=author_id
